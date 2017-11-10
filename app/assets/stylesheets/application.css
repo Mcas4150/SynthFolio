@@ -90,6 +90,14 @@ body {
     display: none;
   }
 
+  .contact{
+    display:none;
+  }
+
+  .about{
+    display:none;
+  }
+
 /* FAIRS */
 
   a.fair:hover {
