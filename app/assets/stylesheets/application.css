@@ -8,8 +8,8 @@
 
 /* STRUCTURE */
 body {
-
-  color: black;
+  background-color: #4A6EFC;
+  color: white;
   font-family: apercu, sans-serif;
 }
 
@@ -293,10 +293,6 @@ body {
 
   .fair-pg-middle {
   padding: 18px 5% 0px 5%;
-  }
-
-  .text {
-  padding-bottom: 18px;
   }
 
 
