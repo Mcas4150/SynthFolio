@@ -60,15 +60,40 @@ body {
     color: #247B7B;
   }
 
-  p, h1 {
+  h3:hover{
+    color: tomato;
+  }
+
+  h1 {
     color: #5c2f8c;
   }
 
+  p {
+    color: #6a6a6a;
+    padding: 3px;
+  }
+
+  p > a {
+    padding:0px;
+  }
 input, textarea {
   background-color: ghostwhite;
-  border: none;
+  /*border: none;*/
   font: 400 1em system-ui;
   width: 100%;
+  padding: 3px;
+  margin-top: 3px;
+  border: .5px solid #247B7B;
+  border-radius: 1px;
+}
+
+input:hover, textarea:hover {
+  color: #247B7B;
+}
+
+
+input#name{
+  margin-top: 0p;
 }
 
 textarea {
@@ -79,8 +104,7 @@ textarea {
     cursor: auto;
     white-space: pre-wrap;
     word-wrap: break-word;
-    padding: 0px;
-    height: 54px;
+    height: 36px;
 }
 
 input:focus, textarea:focus {
@@ -90,9 +114,9 @@ input:focus, textarea:focus {
 
 #sendButton{
       display: block;
-    color: #247B7B;
+    color: #5c2f8c;
     width: auto;
-    border: 1.5px solid #6a6a6a;
+   /* border: 1.5px solid #6a6a6a;*/
     padding:3px;
 }
 
