@@ -1,15 +1,8 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
-
-
-
-
 
 /* STRUCTURE */
 body {
-  background-color: #4A6EFC;
-  color: white;
+  background-color: ghostwhite;
+  color: black;
   font-family: apercu, sans-serif;
 }
 
@@ -26,12 +19,13 @@ body {
   height: 100%;
   }
 
-  .index, .fair-pg {
-  overflow: auto;
-  }
+.wrapper {
+    padding: 0 0 50px 0;
+    max-width: 600px;
+    margin: auto;
+}
 
   .page-wrap {
-/*  background: deepskyblue; */
   height: 100%;
   width: 100%;
   display: flex;
@@ -39,210 +33,15 @@ body {
   justify-content: center;
   }
 
-  .index-middle, .fair-pg-middle {
-/*  background-color: deepskyblue; */
-  /* flex-self */
-  order: 2;
-  flex-basis: 33.33%;
-  /* flex-children */
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  padding: 18px 1.15% 0px 1.15%;
-  }
-
-  .index-middle-content, .fair-pg-middle-content {
-/*  background-color: lightpink; */
-  width: 100%;
-  }
-
-  .middle {
-  overflow: auto;
-  padding: 18px 1.15% 0px 1.15%;
-
-  order: 2;
-  flex-basis: 33.33%;
-  /* flex-children */
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  }
-
-  .left {
-  text-align: left;
-  overflow: auto;
-  padding: 10px 1.15% 0px 1.15%;
-  /* flex-self */
-  order: 1;
-  flex-basis: 33.33%;
-  }
-
-  .right {
-  overflow: auto;
-  padding: 10px 1.15% 0px 1.15%;
-  /* flex-self */
-  order: 3;
-  flex-basis: 33.33%;
-  }
-
-
-  .projects{
+  .projects, .contact, .about{
     display: none;
-  }
-
-  .contact{
-    display:none;
-  }
-
-  .about{
-    display:none;
-  }
-
-/* FAIRS */
-
-  a.fair:hover {
-  text-decoration: none;
-  color: yellowgreen;
-  cursor: pointer;
-  }
-
-  .fair .selected {
-  color: yellowgreen;
-  }
-
-  .fair-pg-middle {
-    flex-basis: 50%;
-  }
-
-  .restrict {
-    display: inline-block;
-    width: 62%;
-/*    background-color: lime; */
-  }
-
-  .fair-description {
-/*    background-color: khaki; */
-      padding-bottom: 88px;
-  }
-
-/* ITEMS */
-  header {
-  margin-bottom: 80px;
-  width: 100%;
-  }
-
-  header img {
-  height: 50px;
-  display: inline-block;
-  padding-left: 2px;
-  padding-right: 2px;
-  padding-bottom: 4px;
-  }
-
-  .list-item {
-  padding-bottom: 5vh;
-  padding-left: 7%;
-  padding-right: 7%;
-  }
-
-  .date {
-  padding-top: 18px;
-  }
-
-  .text-medium p {
-  padding-top: 3px;
-  padding-bottom: 15px;
-  }
-
-  .text {
-  padding-bottom: 0px;
-  }
-
-  .image-wrap {
- /* padding-top: 10px;
-  padding-bottom: 18px;*/
-  border-style:ridge;
-  border-width:5px;
-  border-color:white;
-  }
-
-  .current {
-/*  color: tomato;   */
-  }
-
-  .selected {
-  color: tomato;
-  }
-
-  .left img {
-  width: 100%;
-  }
-
-  .caption {
-  padding-top: 4px;
-  }
-
-  footer {
-/*  display: block; */
-
-  }
-
-  .index-footer {
-/*  background: lightgreen; */
-  padding-bottom: 16px;
-  min-height: 68px;
-  align-self:flex-end;
-  }
-
-  .min-footer {
-  display: none;
   }
 
 /* TYPOGRAPHY */
 
-
-  .logo {
-    font-size:38px;
-  }
-
-
-
-  body {
-  font-family: "Times New Roman", Times, serif;
-  text-align: center;
-  -webkit-text-size-adjust: 100%;
-  }
-
-  .text-small {
-  font-size:  15px;
-  line-height: 18px;
-  letter-spacing: 0.015em;
-  }
-
-  .text-medium {
-  font-size:  23px;
-  -webkit-text-size-adjust: 104%;
-  line-height: 28px;
-  letter-spacing: 0.015em;
-  }
-
-  .text-large {
-  font-size: 40px;
-  -webkit-text-size-adjust: 106%;
-  line-height: 44px;
-  letter-spacing: 0.01em;
-  }
-
-/* LINKS */
   a:link {
   text-decoration: none;
-  color: black;
-  cursor: pointer;
-  }
-
-  a:visited {
-  text-decoration: none;
-  color: black;
+  color: #247B7B;
   cursor: pointer;
   }
 
@@ -252,6 +51,13 @@ body {
   cursor: pointer;
   }
 
+  h3{
+    color: #247B7B;
+  }
+
+  p {
+    color: #5c2f8c;
+  }
 
 
 
@@ -261,52 +67,10 @@ body {
   overflow: auto;
   }
 
-    body {
-/*     background-color: lightgreen; */
-    }
 
-    .page-wrap {
-  display: block;
-  }
-
-  .index-middle {
-  padding: 18px 5% 0px 5%;
-  box-sizing: border-box;
-  }
-
-  .index-hide {
-  display: none;
-  }
-
-  .index {
-  overflow: visible;
-  }
-
-  .middle, .left, .right {
-  padding: 18px 5% 0px 5%;
-  overflow: visible;
-  }
-
-  .fair-pg {
-  overflow: visible;
-  }
-
-  .fair-pg-middle {
-  padding: 18px 5% 0px 5%;
-  }
-
-
-
-  .restrict {
-  width: 100%;
-  }
 
   footer {
   display: none;
   }
 
-  .min-footer {
-  display: block;
-  padding-bottom: 18px;
-  }
 }

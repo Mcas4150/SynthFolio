@@ -90,6 +90,23 @@ $(document).ready(function(){
 
 
 </script>
+
+ <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+                    <script>
+                        function greet() {
+                            var nameVal = document.getElementById('name').checkValidity();
+                            var emailVal = document.getElementById('email').checkValidity();
+                            var textareaVal = document.getElementById('message').checkValidity();
+                            if (nameVal && emailVal && textareaVal) {
+                                document.getElementById('sendButton').style.width = "97px";
+                                document.getElementById('sendButton').setAttribute('value', 'thanks!');
+                            }
+                        }
+                    </script>
+
+
+
+
 <script>
   $(document).ready(function() {
 
