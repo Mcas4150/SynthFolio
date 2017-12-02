@@ -41,7 +41,7 @@ body {
 
   a:link {
   text-decoration: none;
-  color: #247B7B;
+  color: #5c2f8c;
   cursor: pointer;
   }
 
@@ -51,15 +51,50 @@ body {
   cursor: pointer;
   }
 
+  a{
+    padding:3px;
+  }
+
+
   h3{
     color: #247B7B;
   }
 
-  p {
+  p, h1 {
     color: #5c2f8c;
   }
 
+input, textarea {
+  background-color: ghostwhite;
+  border: none;
+  font: 400 1em system-ui;
+  width: 100%;
+}
 
+textarea {
+    -webkit-appearance: textarea;
+    -webkit-rtl-ordering: logical;
+    flex-direction: column;
+    resize: none;
+    cursor: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding: 0px;
+    height: 54px;
+}
+
+input:focus, textarea:focus {
+    outline: -webkit-focus-ring-color auto 3px;
+    outline-color: #5c2f8c;
+}
+
+#sendButton{
+      display: block;
+    color: #247B7B;
+    width: auto;
+    border: 1.5px solid #6a6a6a;
+    padding:3px;
+}
 
 @media screen and (max-width: 778px) {
 

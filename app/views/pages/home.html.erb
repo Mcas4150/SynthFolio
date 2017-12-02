@@ -25,8 +25,17 @@
     <a href="/app/assets/images/mikecassidyresume.docx" download><h3>CV</h3></a>
     <a class="drops"><h3>Contact</h3></a>
       <div class="contact">
-        <p>(617)448-0635</p>
-        <p><%=  mail_to('mikecassidy0000@gmail.com')%></p>
+        <form action="https://formspree.io/mikecassidy0000@gmail.com" method="POST">
+                            <input id="name" name="name" type="text" placeholder="Name" required="">
+                            <br>
+                            <input id="email" name="_replyto" type="email" placeholder="Email" required="">
+                            <br>
+                            <input type="text" name="_gotcha" style="display:none">
+                            <input type="hidden" name="_next" value="//mcas4150.github.io/">
+                            <textarea id="message" name="message" type="text" placeholder="Message" required=""></textarea>
+                            <br>
+                            <input id="sendButton" class="btn btn-default" type="submit" value="Send" onclick="greet()">
+                        </form>
       </div>
   </div>
 </div>
