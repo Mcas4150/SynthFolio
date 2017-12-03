@@ -1,7 +1,7 @@
 
 /* STRUCTURE */
 body {
-  background-color: ghostwhite;
+  background-image: url('hip-square.png');
   color: black;
   /*font-family: apercu, sans-serif;*/
   font-family: "Abril Fatface";
@@ -82,7 +82,7 @@ body {
     padding:0px;
   }
 input, textarea {
-  background-color: ghostwhite;
+  background-color: transparent;
   /*border: none;*/
   font: 400 1em system-ui;
   width: 100%;
