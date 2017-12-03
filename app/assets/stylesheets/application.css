@@ -3,7 +3,8 @@
 body {
   background-color: ghostwhite;
   color: black;
-  font-family: apercu, sans-serif;
+  /*font-family: apercu, sans-serif;*/
+  font-family: "Abril Fatface";
 }
 
   * {
@@ -18,6 +19,11 @@ body {
   html, body {
   height: 100%;
   }
+
+.pad{
+  margin: 5px 0px;
+}
+
 
 .wrapper {
     padding: 0 0 50px 0;
@@ -52,26 +58,25 @@ body {
   }
 
   a{
-    padding:3px;
+    padding:5px 0px;
   }
 
 
   h3{
     color: #247B7B;
+    margin: 15px 0px;
   }
 
   h3:hover{
     color: tomato;
+    cursor: pointer;
   }
 
   h1 {
     color: #5c2f8c;
+    font-family: "Abril Fatface";
   }
 
-  p {
-    color: #6a6a6a;
-    padding: 3px;
-  }
 
   p > a {
     padding:0px;
