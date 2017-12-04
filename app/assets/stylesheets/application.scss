@@ -1,10 +1,10 @@
 
 /* STRUCTURE */
 body {
-  background-image: url('hip-square.png');
+  background: black;
   color: black;
   /*font-family: apercu, sans-serif;*/
-  font-family: "Abril Fatface";
+
 }
 
   * {
@@ -22,6 +22,8 @@ body {
 
 .pad{
   margin: 5px 0px;
+  color: white;
+  text-align: center;
 }
 
 
@@ -29,6 +31,7 @@ body {
     padding: 0 0 50px 0;
     max-width: 600px;
     margin: auto;
+    text-align: center;
 }
 
   .page-wrap {
@@ -39,42 +42,45 @@ body {
   justify-content: center;
   }
 
-  .projects, .contact, .about{
-    display: none;
-  }
+
+.outline {
+  padding: -2px 5px;
+  border-left: 3px solid white;
+  border-right: 3px solid white;
+}
 
 /* TYPOGRAPHY */
 
   a:link {
   text-decoration: none;
-  color: #5c2f8c;
+  color: white;
   cursor: pointer;
   }
 
   a:hover {
   text-decoration: none;
-  color: #78CDD7;
+  color: white;
   cursor: pointer;
   }
 
   a{
     padding:5px 0px;
+    color: white;
   }
 
 
   h3{
-    color: #247B7B;
-    margin: 15px 0px;
+    color: black;
+    font-weight: 300;
+    margin: 5px 0px;
+    font-size: 1em;
   }
 
-  h3:hover{
-    color: tomato;
-    cursor: pointer;
-  }
+
 
   h1 {
-    color: #5c2f8c;
-    font-family: "Abril Fatface";
+    color: white;
+
   }
 
 
@@ -83,14 +89,33 @@ body {
   }
 input, textarea {
   background-color: transparent;
-  color: #247B7B;
+  color: white;
   font: 400 1em system-ui;
   width: 100%;
   padding: 3px;
   margin-top: 3px;
-  border: 1px solid #247B7B;
-  border-radius: 1px;
+  border: 1px solid white;
+  border-radius: 3px;
 }
+
+.beige {
+background: #cabfb8;
+border-radius: 7.5px;
+margin: 3px;
+padding:5px;
+}
+
+.green{
+  background: #667966;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.cen{
+  text-align: center;
+}
+
 
 /*input:hover, textarea:hover {
   color: #247B7B;
@@ -114,12 +139,17 @@ textarea {
 
 input:focus, textarea:focus {
     outline: -webkit-focus-ring-color auto 3px;
-    outline-color: #5c2f8c;
+    outline-color: #cabfb8;
 }
+
+input::placeholder, textarea::placeholder{
+  color: white;
+}
+
 
 #sendButton{
       display: block;
-    color: #5c2f8c;
+    color: white;
     width: auto;
    /* border: 1.5px solid #6a6a6a;*/
     padding:3px;
