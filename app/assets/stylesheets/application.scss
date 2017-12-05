@@ -5,11 +5,17 @@
 /* STRUCTURE */
 
 body {
-  background: black;
+  background-color: black;
   color: black;
   /*font-family: apercu, sans-serif;*/
 
 }
+
+.page{
+  background-image: url('https://www.textures.com/system/gallery/photos/Substance/127273/Substance0079_10_download600.jpg');
+  background-repeat: repeat;
+}
+
 
   * {
   margin: 0;
@@ -109,7 +115,9 @@ border-right: 3px solid white;
   margin:0px;
 }
 
-
+.rez{
+  margin-bottom: 7.5px;
+}
 
 .bottom-panel{
   margin-top:25px;
@@ -120,6 +128,7 @@ border-right: 3px solid white;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    color: white
 }
 
 .job{
@@ -198,7 +207,7 @@ border-right: 3px solid white;
 
   a:hover {
   text-decoration: none;
-  color: white;
+  color: black;
   cursor: pointer;
   }
 
@@ -224,6 +233,12 @@ border-right: 3px solid white;
 
   h6{
     margin:0px;
+    color:white;
+  }
+
+  h8{
+    font-size: .85em;
+    font-weight: 400;
   }
 
 
@@ -242,11 +257,13 @@ input, textarea {
 }
 
 .beige {
-background: #cabfb8;
+ background: #cabfb8;
 border-radius: 7.5px;
 margin: 3px;
 padding:5px;
+
 }
+
 
 .green{
   background: #667966;
