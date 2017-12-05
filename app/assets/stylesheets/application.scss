@@ -153,6 +153,31 @@ border-right: 3px solid white;
   font-weight: 400;
 }
 
+
+.github{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+
+    color: white;
+    width: auto;
+    border: 1.5px solid white;
+    padding:3px;
+    border-radius: 3px;
+}
+
+.github:hover{
+  border: 1.5px solid black;
+}
+
+.between{
+  justify-content: space-between;
+}
+
+a.github{
+  color: black;
+
+}
 /*
 
 
