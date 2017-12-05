@@ -115,8 +115,17 @@ border-right: 3px solid white;
   margin-top:25px;
 }
 
+.year{
+  width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
 
-
+.job{
+  width:75%;
+  line-height: 1;
+}
 /*
 
 
@@ -211,6 +220,10 @@ border-right: 3px solid white;
   h1 {
     color: white;
 
+  }
+
+  h6{
+    margin:0px;
   }
 
 
