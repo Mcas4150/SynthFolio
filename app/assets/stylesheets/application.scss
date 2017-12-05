@@ -1,5 +1,9 @@
+@import "bootstrap";
+@import "bootstrap-override";
+
 
 /* STRUCTURE */
+
 body {
   background: black;
   color: black;
@@ -49,6 +53,72 @@ body {
   border-right: 3px solid white;
 }
 
+.synthesizer{
+  padding: 20px 40px;
+}
+
+
+
+.keyboard{
+  background: white;
+}
+
+.white{
+  border: 1.5px solid white;
+  border-radius: 3px;
+  color: white;
+  padding: 5px;
+  margin: 5px;
+}
+
+.description {
+  height: 224px;
+  padding: 0px 10px;
+border-left: 1.5px solid;
+}
+
+.keyboard{
+  height: 224px;
+
+}
+.stretch{
+  object-fit: fill;
+}
+
+/*
+
+
+.experience, .knowledge{
+  width: 33.333%;
+}
+
+
+
+.keyboard {
+  width: 66.666%;
+}
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* TYPOGRAPHY */
 
   a:link {
@@ -91,7 +161,7 @@ input, textarea {
   background-color: transparent;
   color: white;
   font: 400 1em system-ui;
-
+      width: 100%;
   padding: 3px;
   margin-top: 3px;
   border: 1.5px solid white;
@@ -151,7 +221,7 @@ input::placeholder, textarea::placeholder{
       display: block;
     color: white;
     width: auto;
-   /* border: 1.5px solid #6a6a6a;*/
+    border: 1.5px solid white;
     padding:3px;
 }
 
