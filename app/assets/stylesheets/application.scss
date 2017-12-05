@@ -135,6 +135,24 @@ border-right: 3px solid white;
   width:75%;
   line-height: 1;
 }
+
+.space{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill{
+  width: 25%;
+  color: white;
+  font-size: .9em;
+}
+
+.detail{
+  font-size: .8em;
+  font-weight: 400;
+}
+
 /*
 
 
@@ -237,8 +255,8 @@ border-right: 3px solid white;
   }
 
   h8{
-    font-size: .85em;
-    font-weight: 400;
+    font-size: .9em;
+    font-weight: 500;
   }
 
 
@@ -294,7 +312,7 @@ textarea {
     cursor: auto;
     white-space: pre-wrap;
     word-wrap: break-word;
-    height: 36px;
+    height: 64px;
 }
 
 input:focus, textarea:focus {
