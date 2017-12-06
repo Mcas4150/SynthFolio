@@ -36,6 +36,9 @@ body {
   text-align: center;
 }
 
+.none{
+  margin-bottom: 0px;
+}
 
 .wrapper {
     padding: 0 0 50px 0;
@@ -174,6 +177,7 @@ border-right: 3px solid white;
 
 .between{
   justify-content: space-between;
+  align-items: center;
 }
 
 a.github{
@@ -199,7 +203,7 @@ a.github{
     background-repeat: no-repeat;
     height: 35px;
     width: 50px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .leather{
@@ -406,6 +410,9 @@ input::placeholder, textarea::placeholder{
   color: white;
 }
 
+.notop{
+  margin-top:0px;
+}
 
 #sendButton{
       display: block;
