@@ -193,7 +193,13 @@ a.github{
 }
 
 
-
+.robot{
+  font-family: 'Press Start 2P';
+  font-size: .75em;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 
 
 
@@ -256,6 +262,7 @@ a.github{
 
 .model{
   font-size: 2em;
+  font-family: 'Roboto Mono', monospace;
   color: white;
   display: flex;
   justify-content: flex-end;
