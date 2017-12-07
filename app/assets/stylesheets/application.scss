@@ -290,7 +290,8 @@ a.github{
       border: 1.5px solid white;
     border-radius: 3px;
     color: white;
-    padding: 5px;
+       padding-left: 2px;
+    padding-right: 2px;
     text-align: center;
 }
 
@@ -404,6 +405,9 @@ padding:5px;
 
 }
 
+.set{
+  height: 242px;
+}
 
 .green{
   background: #667966;
@@ -440,7 +444,7 @@ background-image: url('https://i.imgur.com/xNZRiiX.png');
 .fader, .fader2{
   background-position: center;
   background-repeat: no-repeat;
-  height: 96px;
+  height: 100px;
 }
 
 
