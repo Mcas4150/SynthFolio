@@ -120,8 +120,15 @@ border-right: 3px solid white;
 }
 
 .rez{
-  margin-bottom: 7.5px;
+  margin-bottom: 5px;
+  padding-top:2.5px;
 }
+
+
+.top-border{
+  border-top: 2px solid white;
+}
+
 
 .bottom-panel{
   margin-top:25px;
@@ -237,26 +244,30 @@ a.github{
   background-repeat: no-repeat;
   height: 30px;
 }
-/*
 
 
-.2
 
-.experience, .knowledge{
-  width: 33.333%;
+
+.title-panel{
+  height: 50px;
+  width:100%;
 }
 
 
-
-.keyboard {
-  width: 66.666%;
+.model{
+  font-size: 2em;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
 }
 
-
-
-
-
-*/
+.white2{
+      border: 1.5px solid white;
+    border-radius: 3px;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
 
 
 .key {
