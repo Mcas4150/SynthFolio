@@ -81,6 +81,16 @@ body {
   text-align:center;
 }
 
+.white2{
+      border: 1.5px solid white;
+    border-radius: 3px;
+    color: white;
+       padding-left: 2px;
+    padding-right: 2px;
+    text-align: center;
+}
+
+
 .description {
   height: 242px;
   padding: 0px 5px;
@@ -153,6 +163,7 @@ border-right: 3px solid white;
   color: white;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 
@@ -218,13 +229,24 @@ a.github{
 
 
 .robot{
-  font-family: 'Press Start 2P';
-  font-size: .5em;
+  background-image: url('https://i.imgur.com/PsPRGCL.png');
+
   padding-top: 15px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
+
+
+
+
+
+
+
+
+
+
+// IMAGES
 
 
 .knob{
@@ -283,17 +305,40 @@ a.github{
   height: 15px;
 }
 
-
-
-
-.white2{
-      border: 1.5px solid white;
-    border-radius: 3px;
-    color: white;
-       padding-left: 2px;
-    padding-right: 2px;
-    text-align: center;
+.fader{
+background-image: url('https://i.imgur.com/xNZRiiX.png');
 }
+
+.fader2{
+ background-image: url('https://i.imgur.com/4BO0JVC.png');
+}
+
+.fader, .fader2{
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100px;
+}
+
+.robot{
+  background-image: url('https://i.imgur.com/PsPRGCL.png');
+    background-size: 100%;
+  // background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 25px;
+  width: 150px;
+}
+
+
+
+//
+
+
+// Piano
+
+
 
 
 .key {
@@ -339,7 +384,7 @@ a.github{
     justify-content: center;
 }
 
-
+//
 
 /* TYPOGRAPHY */
 
@@ -436,19 +481,11 @@ padding:5px;
   color: black;
 }
 
-.fader{
-background-image: url('https://i.imgur.com/xNZRiiX.png');
+.links{
+display: flex;
+justify-content: space-between;
 }
 
-.fader2{
- background-image: url('https://i.imgur.com/4BO0JVC.png');
-}
-
-.fader, .fader2{
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100px;
-}
 
 
 .col-xs-4{
@@ -496,20 +533,9 @@ input::placeholder, textarea::placeholder{
     padding:3px;
 }
 
-@media screen and (max-width: 778px) {
-
-  html {
-  overflow: auto;
+html{
+    overflow: scroll;
   }
-
-
-
-  footer {
-  display: none;
-  }
-
-}
-
 
 @media screen and (max-width: 600px){
   .keys, .knob, .knob2, .toggle, .switch, .power, .middle-panel, .skills, .education, .volunteer, .work, .section{
@@ -520,5 +546,6 @@ input::placeholder, textarea::placeholder{
     border-left: 3px solid white;
     border-right: 3px solid white;
 }
+
 
 }
