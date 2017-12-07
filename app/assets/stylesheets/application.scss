@@ -130,9 +130,33 @@ border-right: 3px solid white;
 }
 
 
-.bottom-panel{
-  margin-top:25px;
+
+.title-panel{
+  height: 50px;
+  width:100%;
+  display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
+
+
+.middle-panel{
+  height: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.model{
+  font-size: 1.5em;
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
 
 .year{
   width: 25%;
@@ -254,22 +278,7 @@ a.github{
 
 
 
-.title-panel{
-  height: 50px;
-  width:100%;
-  display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
 
-
-.model{
-  font-size: 1.5em;
-  font-family: 'Roboto Mono', monospace;
-  color: white;
-  display: flex;
-  justify-content: flex-end;
-}
 
 .white2{
       border: 1.5px solid white;
@@ -286,7 +295,7 @@ a.github{
     width: 45px;
     height: 225px;
     margin: 0 2px 2px 0;
-    background: #fff;
+    background: #d8c4ac;
     border-radius: 0 0 4px 4px;
 }
 
