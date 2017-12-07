@@ -509,3 +509,10 @@ input::placeholder, textarea::placeholder{
   }
 
 }
+
+
+@media screen and (max-width: 600px){
+  .keys, .knob, .knob2, .toggle, .switch, .power{
+    display:none;
+  }
+}
