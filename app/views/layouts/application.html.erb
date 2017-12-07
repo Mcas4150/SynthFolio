@@ -92,6 +92,24 @@ $(document).ready(function(){
 
 </script>
 
+<script>
+  $(document).ready(() => {
+    $('.bellabutton').on('mouseenter', () => {
+      $('.bella').show(), $('.rama').hide(), $('.commons').hide()
+    })
+    $('.commonsbutton').on('mouseenter', () => {
+      $('.commons').show(), $('.rama').hide(), $('.bella').hide()
+    })
+     $('.ramabutton').on('mouseenter', () => {
+      $('.rama').show(), $('.commons').hide(), $('.bella').hide()
+    })
+  });
+
+
+</script>
+
+
+
  <script async="" src="https://www.google-analytics.com/analytics.js"></script>
                     <script>
                         function greet() {
