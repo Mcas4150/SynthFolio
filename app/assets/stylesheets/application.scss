@@ -82,7 +82,7 @@ body {
 }
 
 .description {
-  height: 224px;
+  height: 242px;
   padding: 0px 5px;
 border-left: 3px solid white;
 border-right: 3px solid white;
@@ -334,7 +334,10 @@ a.github{
     background-color: #222;
 }
 
-
+.keys{
+      display: flex;
+    justify-content: center;
+}
 
 
 
