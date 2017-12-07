@@ -95,13 +95,22 @@ $(document).ready(function(){
 <script>
   $(document).ready(() => {
     $('.bellabutton').on('mouseenter', () => {
-      $('.bella').show(), $('.rama').hide(), $('.commons').hide()
+      $('.bellabutton').addClass('button-active'), $('.bella').show(), $('.rama').hide(), $('.commons').hide()
     })
     $('.commonsbutton').on('mouseenter', () => {
-      $('.commons').show(), $('.rama').hide(), $('.bella').hide()
+        $('.commonsbutton').addClass('button-active'), $('.commons').show(), $('.rama').hide(), $('.bella').hide()
     })
      $('.ramabutton').on('mouseenter', () => {
-      $('.rama').show(), $('.commons').hide(), $('.bella').hide()
+       $('.ramabutton').addClass('button-active'), $('.rama').show(), $('.commons').hide(), $('.bella').hide()
+    })
+      $('.ramabutton').on('mouseleave', () => {
+         $('.ramabutton').removeClass('button-active')
+    })
+        $('.commonsbutton').on('mouseleave', () => {
+         $('.commonsbutton').removeClass('button-active')
+    })
+          $('.bellabutton').on('mouseleave', () => {
+         $('.bellabutton').removeClass('button-active')
     })
   });
 
