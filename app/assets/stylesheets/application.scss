@@ -195,8 +195,8 @@ a.github{
 
 .robot{
   font-family: 'Press Start 2P';
-  font-size: .75em;
-  padding-top: 10px;
+  font-size: .5em;
+  padding-top: 15px;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -257,11 +257,14 @@ a.github{
 .title-panel{
   height: 50px;
   width:100%;
+  display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 
 .model{
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: 'Roboto Mono', monospace;
   color: white;
   display: flex;
