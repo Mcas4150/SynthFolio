@@ -1,24 +1,2 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is my current portpolio containing my major web development projects so far. The layout and aesthetic were directly inspired by the Roland SH-7, a synthesizer that debuted in 1978.
+<img src='http://secretlifeofsynthesizers.com/wp-content/uploads/2016/11/Roland-SH-7-beauty-2.jpg'>
