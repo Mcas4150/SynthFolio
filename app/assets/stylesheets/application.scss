@@ -217,6 +217,9 @@ border-right: 3px solid white;
   align-items: center;
 }
 
+.small{
+  font-size:.7em;
+}
 
 
 
@@ -307,7 +310,7 @@ justify-content: space-between;
 
 
 @media screen and (max-width:575px){
-.knob, .knob2, .toggle, .power, .middle-panel, .skills, .education, .volunteer, .work, .section, .soon, .desktop, .screw{
+.knob, .knob2, .toggle, .power, .middle-panel, .skills, .education, .volunteer, .work, .section, .soon, .desktop, .screw, .small, .version{
     display:none;
   }
 
