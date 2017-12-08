@@ -46,10 +46,6 @@ body {
 }
 
 
-
-.mobile{
-  display:none;
-}
 .page{
       display: flex;
     justify-content: center;
@@ -227,10 +223,6 @@ border-right: 3px solid white;
 }
 
 
-
-
-
-
 .set{
   min-height: 242px;
 }
@@ -241,13 +233,10 @@ border-right: 3px solid white;
 }
 
 
-.bella{
+.bella, .commons, .mobile{
   display:none;
 }
 
-.commons{
-  display:none;
-}
 
 .button-active{
   color: black;
