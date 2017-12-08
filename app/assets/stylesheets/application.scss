@@ -28,9 +28,17 @@ body {
 
 }
 
+.case{
+  background-color: black;
+   margin-top: 25px;
+      min-width: 1237px;
+      max-width: 1310px;
+}
 
 .synthesizer{
-  margin-top: 25px;
+      margin-left: 20px;
+    margin-top: 15px;
+    margin-right: 20px;
       min-width: 1217px;
       max-width: 1290px;
       background-image: url('https://www.textures.com/system/gallery/photos/Substance/127273/Substance0079_10_download600.jpg');
@@ -156,9 +164,13 @@ border-right: 3px solid white;
 }
 
 
+.title-panel, .top-panel, .middle-panel, .bottom-panel{
+  max-width: 1290px;
+}
+
 
 .title-panel{
-  height: 50px;
+  height: 40px;
   width:100%;
   display: flex;
     justify-content: flex-end;
@@ -173,8 +185,15 @@ border-right: 3px solid white;
   justify-content: space-between;
 }
 
+.bottom-panel{
+  margin-bottom: 10px;
+}
+
+
+
+
 .model{
-  font-size: 1.5em;
+  font-size: 1.4em;
   font-family: 'Roboto Mono', monospace;
   color: white;
   display: flex;
@@ -216,6 +235,9 @@ border-right: 3px solid white;
   padding-top: 2px;
 }
 
+.even{
+  height: 205px;
+}
 
 
 .between{
@@ -273,6 +295,14 @@ justify-content: space-between;
   .synthesizer{
     min-width:305px;
     max-width:305px;
+    margin-top:0px;
+    margin-left:10px;
+    margin-right:10px;
+  }
+
+  .case{
+    min-width:330px;
+    max-width:330px;
   }
 
   .mobile{

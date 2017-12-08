@@ -16,6 +16,7 @@
     margin: 0 2px 2px 0;
     background: #d8c4ac;
     border-radius: 0 0 4px 4px;
+
 }
 
 .key.pressed, .key:active {
@@ -49,4 +50,6 @@
 .keys{
       display: flex;
     justify-content: center;
+          padding-left: 9px;
+    padding-right: 14px;
 }
