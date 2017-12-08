@@ -1,8 +1,25 @@
 @import "bootstrap";
 @import "bootstrap-override";
+@import "keyboard";
+@import "images";
+@import "mailer";
+@import "font";
 
 
 /* STRUCTURE */
+ * {
+  margin: 0;
+  padding: 0;
+  }
+
+  html {
+  overflow: scroll;
+  }
+
+  html, body {
+  height: 100%;
+  width:100%;
+  }
 
 body {
   background: black;
@@ -11,25 +28,12 @@ body {
 
 }
 
-.page{
-      display: flex;
-    justify-content: center;
-    align-self:center;
 
+
+
+.col-xs-4{
+  width:33.333%;
 }
-
-  * {
-  margin: 0;
-  padding: 0;
-  }
-
-  html {
-  overflow: hidden;
-  }
-
-  html, body {
-  height: 100%;
-  }
 
 .pad{
   margin: 5px 0px;
@@ -41,20 +45,17 @@ body {
   margin-bottom: 0px;
 }
 
-.wrapper {
-    padding: 0 0 50px 0;
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
-}
 
-  .page-wrap {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  }
+
+.mobile{
+  display:none;
+}
+.page{
+      display: flex;
+    justify-content: center;
+    align-self:center;
+
+}
 
 
 .outline {
@@ -63,20 +64,7 @@ body {
   border-right: 3px solid white;
 }
 
-.synthesizer{
-      min-width: 1217px;
-      max-width: 1290px;
-      background-image: url('https://www.textures.com/system/gallery/photos/Substance/127273/Substance0079_10_download600.jpg');
-  background-repeat: repeat;
-}
 
-.mobile{
-  display:none;
-}
-
-.keyboard{
-  background: white;
-}
 
 .white{
   border: 1.5px solid white;
@@ -97,6 +85,22 @@ body {
 }
 
 
+.green{
+  background: #667966;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.beige {
+ background: #cabfb8;
+border-radius: 7.5px;
+margin: 3px;
+padding:5px;
+
+}
+
+
 .description {
   max-width: 321px;
   height: 242px;
@@ -104,6 +108,8 @@ body {
 border-left: 3px solid white;
 border-right: 3px solid white;
 }
+
+
 
 .contact, .projects, .experience, .knowledge {
   padding: 0px 5px;
@@ -131,16 +137,6 @@ border-right: 3px solid white;
 .section{
   border-left: 3px solid white;
 }
-
-.keyboard{
-  height: 224px;
-  background-image: url('https://i.imgur.com/rfDofrG.png');
-      background-size: cover;
-
-    background-repeat: no-repeat;
-}
-
-
 
 
 .row{
@@ -219,43 +215,11 @@ border-right: 3px solid white;
 }
 
 
-.github{
-  display: flex;
-  justify-content: center;
-  align-self: center;
-
-    color: white;
-    width: auto;
-    border: 1.5px solid white;
-    padding:3px;
-    border-radius: 3px;
-}
-
-.github:hover{
-  border: 1.5px solid black;
-}
 
 .between{
   justify-content: space-between;
   align-items: center;
 }
-
-a.github{
-  color: black;
-
-}
-
-
-.robot{
-  background-image: url('https://i.imgur.com/PsPRGCL.png');
-
-  padding-top: 15px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-
-
 
 
 .bellabutton, .commonsbutton, .ramabutton{
@@ -266,223 +230,11 @@ a.github{
 
 
 
-// IMAGES
-
-
-.knob{
-  background-image: url('https://i.imgur.com/EjFQA0o.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  height: 100px;
-}
-
-.switch{
-     background-image: url('https://i.imgur.com/dCndRTi.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    height: 35px;
-    width: 50px;
-    margin-top: 10px;
-}
-
-.leather{
-  background-image: url('https://i.imgur.com/NujeAyr.png');
-   background-size: 100%;
-    background-repeat: repeat;
-  width:100%;
-  height: 30px;
-
-}
-
-.knob2{
-  background-image: url('https://i.imgur.com/Ina3quf.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  height: 100px;
-}
-
-.power{
-  background-image: url('https://i.imgur.com/bov7ydy.png');
-  background-size: 30%;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 30px;
-}
-
-.toggle{
-    background-image: url('https://i.imgur.com/eOnCQvr.png');
-  background-size: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 30px;
-}
-
-.screw{
- background-image: url('https://i.imgur.com/OUhnW7W.png');
-  background-size: 100%;
-  // background-position: center;
-  background-repeat: no-repeat;
-  height: 15px;
-}
-
-.fader{
-background-image: url('https://i.imgur.com/xNZRiiX.png');
-}
-
-.fader2{
- background-image: url('https://i.imgur.com/4BO0JVC.png');
-}
-
-.fader, .fader2{
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100px;
-}
-
-.robot{
-  background-image: url('https://i.imgur.com/PsPRGCL.png');
-    background-size: 100%;
-  // background-position: center;
-  background-repeat: no-repeat;
-  padding-top: 15px;
-  padding-left: 5px;
-  padding-right: 5px;
-  height: 25px;
-  width: 150px;
-}
-
-
-
-//
-
-
-// Piano
-
-
-
-
-.key {
-    float: left;
-    position: relative;
-    width: 45px;
-    height: 225px;
-    margin: 0 2px 2px 0;
-    background: #d8c4ac;
-    border-radius: 0 0 4px 4px;
-}
-
-.key.pressed, .key:active {
-    background: #f4f3f3;
-    box-shadow: inset 3px 2px 3px #999, inset -3px 2px 3px #999;
-}
-
-.key.black {
-    width: 0;
-    margin: 0;
-    z-index: 2;
-}
-
-.key.black:after {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -16px;
-    display: block;
-    width: 30px;
-    height: 150px;
-    background: #000;
-    border-radius: 0 0 4px 4px;
-    box-shadow: 1px 1px 0 #555, 2px 2px 0 #555;
-}
-
-.key.black:active:after {
-    background-color: #222;
-}
-
-.keys{
-      display: flex;
-    justify-content: center;
-}
-
-//
-
-/* TYPOGRAPHY */
-
-  a:link {
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
-  }
-
-  a:hover {
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
-  }
-
-  a{
-    padding:5px 0px;
-    color: white;
-  }
-
-
-  h3{
-    color: black;
-    font-weight: 400;
-    margin: 0px;
-    font-size: .85em;
-  }
-
-
-
-  h1 {
-    color: white;
-
-  }
-
-  h6{
-    margin:0px;
-    color:white;
-  }
-
-  h8{
-    font-size: .9em;
-    font-weight: 500;
-  }
-
-
-  p > a {
-    padding:0px;
-  }
-input, textarea {
-  background-color: transparent;
-  color: white;
-  font: 400 1em system-ui;
-      width: 100%;
-  padding: 3px;
-  margin-top: 3px;
-  border: 1.5px solid white;
-  border-radius: 3px;
-}
-
-.beige {
- background: #cabfb8;
-border-radius: 7.5px;
-margin: 3px;
-padding:5px;
-
-}
 
 .set{
   min-height: 242px;
 }
 
-.green{
-  background: #667966;
-  margin: 5px;
-  border-radius: 5px;
-  padding: 5px;
-}
 
 .cen{
   text-align: center;
@@ -508,56 +260,8 @@ justify-content: space-between;
 
 
 
-.col-xs-4{
-  width:33.333%;
-}
 
-/*input:hover, textarea:hover {
-  color: #247B7B;
-}
-*/
-
-input#name{
-  margin-top: 0p;
-}
-
-textarea {
-    -webkit-appearance: textarea;
-    -webkit-rtl-ordering: logical;
-    flex-direction: column;
-    resize: none;
-    cursor: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    height: 64px;
-}
-
-input:focus, textarea:focus {
-    outline: -webkit-focus-ring-color auto 3px;
-    outline-color: #cabfb8;
-}
-
-input::placeholder, textarea::placeholder{
-  color: white;
-}
-
-.notop{
-  margin-top:0px;
-}
-
-#sendButton{
-      display: block;
-    color: white;
-    width: auto;
-    border: 1.5px solid white;
-    padding:3px;
-}
-
-html{
-    overflow: scroll;
-  }
-
-@media screen and (max-width: 600px){
+@media screen and (max-width:575px){
   .keys, .knob, .knob2, .toggle, .switch, .power, .middle-panel, .skills, .education, .volunteer, .work, .section, .soon, .desktop{
     display:none;
   }

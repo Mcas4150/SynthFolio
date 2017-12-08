@@ -1,0 +1,52 @@
+
+.keyboard{
+  height: 224px;
+  background-image: url('https://i.imgur.com/rfDofrG.png');
+      background-size: cover;
+
+    background-repeat: no-repeat;
+}
+
+
+.key {
+    float: left;
+    position: relative;
+    width: 45px;
+    height: 225px;
+    margin: 0 2px 2px 0;
+    background: #d8c4ac;
+    border-radius: 0 0 4px 4px;
+}
+
+.key.pressed, .key:active {
+    background: #f4f3f3;
+    box-shadow: inset 3px 2px 3px #999, inset -3px 2px 3px #999;
+}
+
+.key.black {
+    width: 0;
+    margin: 0;
+    z-index: 2;
+}
+
+.key.black:after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -16px;
+    display: block;
+    width: 30px;
+    height: 150px;
+    background: #000;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 1px 1px 0 #555, 2px 2px 0 #555;
+}
+
+.key.black:active:after {
+    background-color: #222;
+}
+
+.keys{
+      display: flex;
+    justify-content: center;
+}
