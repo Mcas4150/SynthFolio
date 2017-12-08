@@ -30,14 +30,15 @@ body {
 
 .case{
   background-color: black;
-   margin-top: 25px;
+   margin-top: 30px;
       min-width: 1237px;
       max-width: 1310px;
+      box-shadow: 2px 8px 18px black;
 }
 
 .synthesizer{
       margin-left: 20px;
-    margin-top: 15px;
+    margin-top: 18px;
     margin-right: 20px;
       min-width: 1217px;
       max-width: 1290px;
@@ -170,19 +171,19 @@ border-right: 3px solid white;
 
 
 .title-panel{
-  height: 40px;
+  height: 35px;
   width:100%;
   display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
 }
 
 
 .middle-panel{
-  height: 25px;
+  height: 30px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .bottom-panel{
@@ -279,8 +280,13 @@ justify-content: space-between;
 
 
 @media screen and (max-width:575px){
-  .keys, .knob, .knob2, .toggle, .switch, .power, .middle-panel, .skills, .education, .volunteer, .work, .section, .soon, .desktop{
+  .keys, .knob, .knob2, .toggle, .power, .middle-panel, .skills, .education, .volunteer, .work, .section, .soon, .desktop{
     display:none;
+  }
+
+  .switch{
+    background-size: 76%;
+    height: 25px;
   }
 
   .experience, .projects, .contact, .knowledge {
@@ -295,7 +301,7 @@ justify-content: space-between;
   .synthesizer{
     min-width:305px;
     max-width:305px;
-    margin-top:0px;
+    margin-top:10px;
     margin-left:10px;
     margin-right:10px;
   }

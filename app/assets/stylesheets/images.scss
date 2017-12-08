@@ -10,11 +10,12 @@
 
 .switch{
      background-image: url('https://i.imgur.com/dCndRTi.png');
-    background-size: 100%;
     background-repeat: no-repeat;
+        background-size: 95%;
+    background-position: center;
     height: 35px;
     width: 50px;
-    margin-top: 10px;
+
 }
 
 .leather{
@@ -54,7 +55,10 @@
   background-size: 100%;
   // background-position: center;
   background-repeat: no-repeat;
-  height: 15px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-bottom: 5px;
 }
 
 .fader{
@@ -70,6 +74,8 @@ background-image: url('https://i.imgur.com/xNZRiiX.png');
   background-repeat: no-repeat;
   height: 100px;
 }
+
+
 
 .robot{
   background-image: url('https://i.imgur.com/PsPRGCL.png');

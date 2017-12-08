@@ -16,6 +16,7 @@
     margin: 0 2px 2px 0;
     background: #d8c4ac;
     border-radius: 0 0 4px 4px;
+    box-shadow: 2px 3px 30px black;
 
 }
 
@@ -40,7 +41,7 @@
     height: 150px;
     background: #000;
     border-radius: 0 0 4px 4px;
-    box-shadow: 1px 1px 0 #555, 2px 2px 0 #555;
+    box-shadow: 1px 1px 0 #555, 2px 2px 0 #555, 7px 6px 15px grey;
 }
 
 .key.black:active:after {
