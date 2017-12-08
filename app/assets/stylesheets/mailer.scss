@@ -22,7 +22,7 @@ textarea {
     cursor: auto;
     white-space: pre-wrap;
     word-wrap: break-word;
-    height: 64px;
+    height: 55px;
 }
 
 input:focus, textarea:focus {
@@ -46,7 +46,9 @@ input::placeholder, textarea::placeholder{
     padding:3px;
 }
 
-
+.even2{
+  height: 206px;
+}
 
 .github{
   display: flex;
