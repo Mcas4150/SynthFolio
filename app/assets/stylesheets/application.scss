@@ -13,7 +13,7 @@
   }
 
   html {
-  overflow: scroll;
+  overflow: auto;
   }
 
   html, body {
@@ -31,7 +31,7 @@ body {
 
 .page{
   font-family: "Quantico";
-      display: flex;
+    display: flex;
     justify-content: center;
     align-self:center;
 
@@ -43,6 +43,8 @@ body {
       min-width: 1237px;
       max-width: 1310px;
       box-shadow: 2px 8px 18px black;
+          margin-left: 20px;
+    margin-right: 20px;
 }
 
 .synthesizer{
@@ -296,12 +298,21 @@ display: flex;
 justify-content: space-between;
 }
 
+@media screen and (max-width:1300px){
 
+  .page{
+    display:block;
+  }
+}
 
 
 @media screen and (max-width:575px){
 .knob, .knob2, .toggle, .power, .middle-panel, .skills, .education, .volunteer, .work, .section, .soon, .desktop, .screw{
     display:none;
+  }
+
+  .page{
+    display:flex;
   }
 
   .switch{
