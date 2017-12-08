@@ -12,10 +12,11 @@ body {
 }
 
 .page{
-  background-image: url('https://www.textures.com/system/gallery/photos/Substance/127273/Substance0079_10_download600.jpg');
-  background-repeat: repeat;
-}
+      display: flex;
+    justify-content: center;
+    align-self:center;
 
+}
 
   * {
   margin: 0;
@@ -63,7 +64,10 @@ body {
 }
 
 .synthesizer{
-  padding: 20px 40px;
+      min-width: 1217px;
+      max-width: 1290px;
+      background-image: url('https://www.textures.com/system/gallery/photos/Substance/127273/Substance0079_10_download600.jpg');
+  background-repeat: repeat;
 }
 
 
@@ -92,6 +96,7 @@ body {
 
 
 .description {
+  max-width: 321px;
   height: 242px;
   padding: 0px 5px;
 border-left: 3px solid white;
@@ -102,11 +107,22 @@ border-right: 3px solid white;
   padding: 0px 5px;
 }
 
+.knowledge{
+  min-width: 285px;
+}
+
 .contact{
+  min-width: 200px;
+  max-width: 210px;
   border-right: 3px solid white;
 }
 
+.projects{
+  min-width: 285px;
+}
+
 .experience{
+  min-width: 285px;
   border-right: 3px solid white;
 }
 
@@ -454,7 +470,7 @@ padding:5px;
 }
 
 .set{
-  height: 242px;
+  min-height: 242px;
 }
 
 .green{
@@ -547,5 +563,12 @@ html{
     border-right: 3px solid white;
 }
 
+  .contact{
+    max-width: 305px;
+  }
+
+  .synthesizer{
+    min-width:305px;
+  }
 
 }
