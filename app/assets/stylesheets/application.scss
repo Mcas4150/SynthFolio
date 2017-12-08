@@ -22,14 +22,20 @@
   }
 
 body {
-  background: black;
   color: black;
+  background-image: url('https://i.imgur.com/xQayneY.png');
   /*font-family: apercu, sans-serif;*/
 
 }
 
 
-
+.synthesizer{
+  margin-top: 25px;
+      min-width: 1217px;
+      max-width: 1290px;
+      background-image: url('https://www.textures.com/system/gallery/photos/Substance/127273/Substance0079_10_download600.jpg');
+  background-repeat: repeat;
+}
 
 .col-xs-4{
   width:33.333%;
