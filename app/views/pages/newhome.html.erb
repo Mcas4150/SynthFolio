@@ -5,7 +5,7 @@
     </div>
     <div class="top-panel">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4 desktop">
           <%= render "experience"%>
         </div>
         <div class="col-sm-3">
@@ -14,6 +14,14 @@
         <div class="col-sm-3">
           <%= render "description" %>
         </div>
+        <!-- mobile -->
+        <div class="col-sm-4 mobile">
+          <%= render "experience"%>
+        </div>
+        <div class="col-sm-4 mobile">
+          <%= render "skillset" %>
+        </div>
+        <!-- mobile -->
         <div class="col-sm-2">
           <%= render 'mailer'%>
         </div>
@@ -25,7 +33,7 @@
 
     <div class="bottom-panel">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4 desktop">
           <%= render "skillset" %>
         </div>
         <div class="col-sm-8">

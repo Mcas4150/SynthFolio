@@ -70,7 +70,9 @@ body {
   background-repeat: repeat;
 }
 
-
+.mobile{
+  display:none;
+}
 
 .keyboard{
   background: white;
@@ -256,7 +258,9 @@ a.github{
 
 
 
-
+.bellabutton, .commonsbutton, .ramabutton{
+  cursor: pointer;
+}
 
 
 
@@ -554,7 +558,7 @@ html{
   }
 
 @media screen and (max-width: 600px){
-  .keys, .knob, .knob2, .toggle, .switch, .power, .middle-panel, .skills, .education, .volunteer, .work, .section{
+  .keys, .knob, .knob2, .toggle, .switch, .power, .middle-panel, .skills, .education, .volunteer, .work, .section, .soon, .desktop{
     display:none;
   }
 
@@ -569,6 +573,12 @@ html{
 
   .synthesizer{
     min-width:305px;
+    max-width:305px;
   }
+
+  .mobile{
+    display: block;
+  }
+
 
 }
