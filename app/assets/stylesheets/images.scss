@@ -76,9 +76,31 @@ background-image: url('https://i.imgur.com/xNZRiiX.png');
   height: 100px;
 }
 
+
 .littleknob{
-   background-image: url('https://i.imgur.com/0IpRceF.png');
-   background-size: 100%;
+   background-image: url('https://i.imgur.com/93YHhgo.png');
+       background-size: 80%;
+    background-repeat: no-repeat;
+   background-position: center;
+     height: 50px;
+    width: 50px;
+    border-radius:50%;
+}
+
+.littleknob2{
+   background-image: url('https://i.imgur.com/trZ2Btg.png');
+       background-size: 80%;
+    background-repeat: no-repeat;
+   background-position: center;
+     height: 50px;
+    width: 50px;
+    border-radius:50%;
+}
+
+.littleknob3{
+   background-image: url('https://i.imgur.com/2TvQ3n6.png');
+       background-size: 80%;
+    background-repeat: no-repeat;
    background-position: center;
      height: 50px;
     width: 50px;
@@ -87,10 +109,10 @@ background-image: url('https://i.imgur.com/xNZRiiX.png');
 
 .knob3{
    background-image: url('https://i.imgur.com/fLlDZl4.png');
-      background-size: 75%;
+     background-size: 65%;
     background-position: center;
     background-repeat: no-repeat;
-    height: 62px
+    height: 50px;
 }
 
 .robot{

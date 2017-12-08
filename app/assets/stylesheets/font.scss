@@ -1,4 +1,7 @@
   a:link {
+  display: flex;
+  justify-content: center;
+  align-self: center;
   text-decoration: none;
   color: white;
   cursor: pointer;
@@ -18,9 +21,10 @@
 
   h3{
     color: black;
-    font-weight: 400;
+    font-weight: 600;
     margin: 0px;
     font-size: .85em;
+    font-family: "Orbitron";
   }
 
 

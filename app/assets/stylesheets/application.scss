@@ -24,7 +24,16 @@
 body {
   color: black;
   background-image: url('https://i.imgur.com/xQayneY.png');
+  font-family: "Orbitron";
   /*font-family: apercu, sans-serif;*/
+
+}
+
+.page{
+  font-family: "Quantico";
+      display: flex;
+    justify-content: center;
+    align-self:center;
 
 }
 
@@ -56,17 +65,17 @@ body {
   text-align: center;
 }
 
+.pad2{
+  margin: 0px;
+  color: white;
+  text-align: center;
+}
+
 .none{
   margin-bottom: 0px;
 }
 
 
-.page{
-      display: flex;
-    justify-content: center;
-    align-self:center;
-
-}
 
 
 .outline {
@@ -84,6 +93,8 @@ body {
   padding: 5px;
   margin: 5px;
   text-align:center;
+  font-family: "Orbitron";
+    font-size: .9em;
 }
 
 .white2{
@@ -195,8 +206,8 @@ border-right: 3px solid white;
 
 
 .model{
-  font-size: 1.4em;
-  font-family: 'Roboto Mono', monospace;
+  font-size: 1.3em;
+  font-family: 'Orbitron', monospace;
   color: white;
   display: flex;
   justify-content: flex-end;
@@ -243,6 +254,7 @@ border-right: 3px solid white;
 
 
 .between{
+  height: 37px;
   justify-content: space-between;
   align-items: center;
 }
@@ -261,6 +273,12 @@ border-right: 3px solid white;
 .cen{
   text-align: center;
 }
+
+.bottom{
+  height: 62px;
+  margin-top: 0px;
+}
+
 
 
 .bella, .commons, .mobile{
