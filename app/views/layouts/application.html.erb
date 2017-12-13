@@ -43,10 +43,56 @@
          $('.bellabutton').removeClass('button-active')
     })
 
+
+    var audio = document.getElementById("audio");
+   function playAud() {
+        audio.play();
+    }
+
+
+    $('.key1').click(function() {
+      $(this).playAud();
+    });
+
+
+
 });
 
 </script>
+<script>
+  $(document).ready(function() {
+    var audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', '<%= audio_path 'Rich.wav'%>');
 
+    audioElement.addEventListener('ended', function() {
+        this.play();
+    }, false);
+
+    audioElement.addEventListener("canplay",function(){
+        $("#length").text("Duration:" + audioElement.duration + " seconds");
+        $("#source").text("Source:" + audioElement.src);
+        $("#status").text("Status: Ready to play").css("color","green");
+    });
+
+    audioElement.addEventListener("timeupdate",function(){
+        $("#currentTime").text("Current second:" + audioElement.currentTime);
+    });
+
+    $('.key3').mousedown(function() {
+        audioElement.play();
+        $("#status").text("Status: Playing");
+    });
+
+    $('.key3').mouseup(function() {
+        audioElement.pause();
+        $("#status").text("Status: Paused"), audioElement.currentTime = 0;
+    });
+
+    // $('.key3').mouseup(function() {
+    //     audioElement.currentTime = 0;
+    // });
+});
+</script>
 
 
  <script async="" src="https://www.google-analytics.com/analytics.js"></script>
