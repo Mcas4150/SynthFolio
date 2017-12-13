@@ -63,103 +63,43 @@
   $(document).ready(function() {
     var audioElement = document.createElement('audio');
 
+    function keyPress(key, source){
+      $(key).mousedown(function() {
+      audioElement.setAttribute('src', source);
+    });
+    };
 
-    $('.key1').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Hard.wav'%>');
-    });
-    $('.key2').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path '80s.wav'%>');
-    });
-    $('.key3').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Forest.wav'%>');
-    });
-
-    $('.key4').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Rich2.wav'%>');
-    });
-    $('.key5').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Rich.wav'%>');
-    });
-    $('.key6').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'FairLow.wav'%>');
-    });
-    $('.key7').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pomp.wav'%>');
-    });
-    $('.key8').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Basic.wav'%>');
-    });
-    $('.key9').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Drone.wav'%>');
-    });
-     $('.key10').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Ambient.wav'%>');
-    });
-     $('.key11').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Dark.wav'%>');
-    });
-    $('.key12').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Blubby.wav'%>');
-    });
-    $('.key13').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'funky.wav'%>');
-    });
-    $('.key14').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-     $('.key15').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-    $('.key16').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-     $('.key17').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-    $('.key18').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-    $('.key19').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-    $('.key20').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-     $('.key21').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-    $('.key22').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-     $('.key23').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-      $('.key24').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-    $('.key25').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-    $('.key26').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-     $('.key27').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-    $('.key28').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-     $('.key29').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-  $('.key30').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-     $('.key31').mousedown(function() {
-      audioElement.setAttribute('src', '<%= audio_path 'Pwm.wav'%>');
-    });
-
-
+    keyPress(".key1", "<%= audio_path 'Hard.wav'%>");
+    keyPress(".key2", "<%= audio_path '80s.wav'%>");
+    keyPress(".key3", "<%= audio_path 'Forest.wav'%>");
+    keyPress(".key4", "<%= audio_path 'Rich2.wav'%>");
+    keyPress(".key5", "<%= audio_path 'Rich.wav'%>");
+    keyPress(".key6", "<%= audio_path 'FairLow.wav'%>");
+    keyPress(".key7", "<%= audio_path 'Pomp.wav'%>");
+    keyPress(".key8", "<%= audio_path 'Basic.wav'%>");
+    keyPress(".key9", "<%= audio_path 'Drone.wav'%>");
+    keyPress(".key10", "<%= audio_path 'Ambient.wav'%>");
+    keyPress(".key11", "<%= audio_path 'Blubby.wav'%>");
+    keyPress(".key12", "<%= audio_path 'funky.wav'%>");
+    keyPress(".key13", "<%= audio_path 'Pwm.wav'%>");
+    keyPress(".key14", "<%= audio_path '80s.wav'%>");
+    keyPress(".key15", "<%= audio_path 'Hard.wav'%>");
+    keyPress(".key16", "<%= audio_path '80s.wav'%>");
+    keyPress(".key17", "<%= audio_path 'Hard.wav'%>");
+    keyPress(".key18", "<%= audio_path '80s.wav'%>");
+    keyPress(".key19", "<%= audio_path 'Hard.wav'%>");
+    keyPress(".key20", "<%= audio_path '80s.wav'%>");
+    keyPress(".key21", "<%= audio_path 'Hard.wav'%>");
+    keyPress(".key22", "<%= audio_path '80s.wav'%>");
+    keyPress(".key23", "<%= audio_path 'Hard.wav'%>");
+    keyPress(".key24", "<%= audio_path '80s.wav'%>");
+    keyPress(".key25", "<%= audio_path 'Hard.wav'%>");
+    keyPress(".key26", "<%= audio_path '80s.wav'%>");
+    keyPress(".key27", "<%= audio_path 'Hard.wav'%>");
+    keyPress(".key28", "<%= audio_path '80s.wav'%>");
+    keyPress(".key29", "<%= audio_path 'Hard.wav'%>");
+    keyPress(".key30", "<%= audio_path '80s.wav'%>");
+    keyPress(".key31", "<%= audio_path 'Hard.wav'%>");
 
     $('.key').mousedown(function(){
       audioElement.play();
