@@ -11,8 +11,10 @@
     <link rel="icon" type="image/png" href="https://i.imgur.com/51FUabu.png">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application' %>
 
 
+<script src="scripts/qwerty-hancock.min.js"></script>
 <script>
   $(document).ready(() => {
     $('.bellabutton').on('click', () => {
@@ -56,44 +58,6 @@
 
 
 
-});
-
-</script>
-<script>
-  // WEB AUDIO API
-  $(document).ready(function() {
-    var context = new (window.AudioContext || window.webkitAudioContext)();
-
-  // Oscillator
-    var oscillator = context.createOscillator();
-    oscillator.type = "sine";
-    oscillator.frequency.value = 440;
-    oscillator.connect(context.destination);
-
-  // Gain
-    var gain = context.createGain();
-    oscillator.connect(gain);
-    gain.connect(context.destination);
-    gain.gain.exponentialRampToValueAtTime(0.001, context.currentTime + 1);
-
-
-
-    // oscillator.start(0);
-
-
-  // function keyPress(key){
-  //     $(key).mousedown(function() {
-  //     oscillator.start();
-  //   });
-  //   };
-
-    $('.key').mousedown(function(){
-      oscillator.start();
-    });
-
-    $('.key').mouseup(function() {
-        oscillator.stop();
-    });
 });
 
 </script>
