@@ -5130,6 +5130,10 @@ tty-browserify@0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6"
 
+tunajs@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/tunajs/-/tunajs-1.0.0.tgz#488f00a0fbe95a4c2e30aaa910476bdbd5f27258"
+
 tunnel-agent@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/tunnel-agent/-/tunnel-agent-0.6.0.tgz#27a5dea06b36b04a0a9966774b290868f0fc40fd"
