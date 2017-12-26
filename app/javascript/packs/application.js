@@ -197,6 +197,9 @@ console.log('Hello World from Webpacker')
     vca.gain.value = 0;
   });
 
+  key1.addEventListener("touchstart", function(){
+      vco.frequency.value = 174;
+    });
 
   // document.addEventListener("keydown", function(event){
 
