@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97337b6a-459d-4c87-806d-5b32676ddb9c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/packs/application.js" afterPath="$PROJECT_DIR$/app/javascript/packs/application.js" />
+      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/pages.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/pages.coffee" />
       <change beforePath="$PROJECT_DIR$/app/views/pages/_keyboard.html.haml" afterPath="$PROJECT_DIR$/app/views/pages/_keyboard.html.haml" />
       <change beforePath="$PROJECT_DIR$/app/views/pages/_mailer.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/_mailer.html.erb" />
     </list>
@@ -19,28 +18,6 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="application.js" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/app/javascript/packs/application.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="705">
-                    <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-                    <folding>
-                      <element signature="n#!!doc" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
   </component>
   <component name="FileEditorManager">
     <leaf>
@@ -68,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/app/views/pages/_mailer.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -297,12 +274,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1514311215436</updated>
-      <workItem from="1514311217653" duration="870000" />
+      <workItem from="1514311217653" duration="1294000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="870000" />
+    <option name="totallyTimeSpent" value="1294000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="218" y="455" width="1400" height="838" extended-state="0" />
@@ -412,7 +389,7 @@
     <entry file="file://$PROJECT_DIR$/app/views/pages/_mailer.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -422,7 +399,7 @@
         <state relative-caret-position="705">
           <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>

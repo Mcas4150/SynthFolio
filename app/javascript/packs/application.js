@@ -7,7 +7,6 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-//= require es6.js
 
 console.log('Hello World from Webpacker')
 
@@ -197,9 +196,6 @@ console.log('Hello World from Webpacker')
     vca.gain.value = 0;
   });
 
-  key1.addEventListener("touchstart", function(){
-      vco.frequency.value = 174;
-    });
 
   // document.addEventListener("keydown", function(event){
 
@@ -307,16 +303,16 @@ document.addEventListener("keydown", play);
 document.addEventListener("touchstart", play);
 
 
-  var slider = document.getElementById("myRange");
-var output = document.getElementById("value");
-output.innerHTML = slider.value; // Display the default slider value
-lowpassFilter.frequency = slider.value*10;
+//   var slider = document.getElementById("myRange");
+// var output = document.getElementById("value");
+// output.innerHTML = slider.value; // Display the default slider value
+// lowpassFilter.frequency = slider.value*10;
 
 // Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-    output.innerHTML = this.value;
-    lowpassFilter.frequency = this.value*10;
-}
+// slider.oninput = function() {
+//     output.innerHTML = this.value;
+//     lowpassFilter.frequency = this.value*10;
+// }
 
 
 });
