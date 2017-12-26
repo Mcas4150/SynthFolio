@@ -7,6 +7,8 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+//= require es6.js
+
 console.log('Hello World from Webpacker')
 
   $(document).ready(function() {
@@ -30,7 +32,7 @@ console.log('Hello World from Webpacker')
     lowpassFilter = context.createBiquadFilter({
       // type: lowpass,
       // q: .5,
-      frequency: 300
+      frequency: 500
     });
 
 
@@ -60,8 +62,6 @@ console.log('Hello World from Webpacker')
     $('.key').mouseup(function() {
       vca.gain.value = 0;
     });
-
-
 
      $('.key1').mousedown(function(){
       vco.frequency.value = 174;
@@ -183,11 +183,137 @@ console.log('Hello World from Webpacker')
     });
 
 
+  document.addEventListener("keydown", function(){
+    vca.gain.value = .65;
+  });
+  document.addEventListener("keyup", function(){
+    vca.gain.value = 0;
+  });
+
+ document.addEventListener("touchstart", function(){
+    vca.gain.value = .65;
+  });
+  document.addEventListener("touchend", function(){
+    vca.gain.value = 0;
+  });
 
 
+  // document.addEventListener("keydown", function(event){
+
+  // $(document).keydown(function(event){
+
+    var play = function(event){
+    switch(event.which){
+      case 90:
+        vco.frequency.value = 174;
+        break;
+      case 83:
+        vco.frequency.value = 185;
+        break;
+      case 88:
+        vco.frequency.value = 196;
+        break;
+      case 68:
+        vco.frequency.value = 207;
+        break;
+      case 67:
+        vco.frequency.value = 220;
+        break;
+      case 70:
+        vco.frequency.value = 233;
+        break;
+      case 86:
+        vco.frequency.value = 246;
+        break;
+      case 66:
+        vco.frequency.value = 261;
+        break;
+      case 72:
+        vco.frequency.value = 277;
+        break;
+      case 78:
+        vco.frequency.value = 293;
+        break;
+      case 74:
+        vco.frequency.value = 311;
+        break;
+      case 77:
+        vco.frequency.value = 329;
+        break;
+      case 188:
+        vco.frequency.value = 349;
+        break;
+      case 76:
+        vco.frequency.value = 369;
+        break;
+      case 190:
+        vco.frequency.value = 391;
+        break;
+      case 186:
+        vco.frequency.value = 415;
+        break;
+      case 191:
+        vco.frequency.value = 440;
+        break;
+      case 81:
+        vco.frequency.value = 466;
+        break;
+      case 87:
+        vco.frequency.value = 493;
+        break;
+      case 51:
+        vco.frequency.value = 523;
+        break;
+      case 69:
+        vco.frequency.value = 554;
+        break;
+      case 52:
+        vco.frequency.value = 587;
+        break;
+      case 82:
+        vco.frequency.value = 622;
+        break;
+      case 84:
+        vco.frequency.value = 659;
+        break;
+      case 54:
+        vco.frequency.value = 698;
+        break;
+      case 89:
+        vco.frequency.value = 749;
+        break;
+      case 55:
+        vco.frequency.value = 783;
+        break;
+      case 85:
+        vco.frequency.value = 830;
+        break;
+      case 56:
+        vco.frequency.value = 880;
+        break;
+      case 73:
+        vco.frequency.value = 932;
+        break;
+      default:
+        vco.frequency.value = null;
+        vca.gain.value = 0;
+    }
+    };
+
+document.addEventListener("keydown", play);
+document.addEventListener("touchstart", play);
 
 
+  var slider = document.getElementById("myRange");
+var output = document.getElementById("value");
+output.innerHTML = slider.value; // Display the default slider value
+lowpassFilter.frequency = slider.value*10;
 
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+    output.innerHTML = this.value;
+    lowpassFilter.frequency = this.value*10;
+}
 
 
 });
