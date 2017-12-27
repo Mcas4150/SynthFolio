@@ -36,6 +36,8 @@ input::placeholder, textarea::placeholder{
 
 .notop{
   margin-top:0px;
+      display: flex;
+    justify-content: flex-end;
 }
 
 #sendButton{

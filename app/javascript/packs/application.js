@@ -257,6 +257,5 @@ document.addEventListener("keydown", play);
 document.addEventListener("touchstart", play);
 
 
-a
 
 });
