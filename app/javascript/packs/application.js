@@ -14,19 +14,19 @@ console.log('Hello World from Webpacker')
       var context = new (window.AudioContext || window.webkitAudioContext)();
       // var tuna = new Tuna(context);
 
-
     // var oscillator = function(frequency){
         // VCO
+
+
+
           var vco = context.createOscillator();
           vco.type = "sine";
-
           vco.start(0);
 
         // VCA
 
           var vca = context.createGain();
           vca.gain.value = 0;
-
 
         // LOWPASS FILTER
 
@@ -39,11 +39,7 @@ console.log('Hello World from Webpacker')
         // Connect
           vco.connect(lowpassFilter);
           lowpassFilter.connect(vca);
-
           vca.connect(context.destination);
-
-
-
 
 
     $('.key').mousedown(function(){
@@ -54,15 +50,12 @@ console.log('Hello World from Webpacker')
       vca.gain.value = 0;
     });
 
-
-
    var mouseclick = function(key, frequency){
     $(key).mousedown(function(){
       vco.frequency.value = frequency;
     });
+
    };
-
-
 
    mouseclick(".key1", 174);
    mouseclick(".key2", 185);
@@ -96,8 +89,6 @@ console.log('Hello World from Webpacker')
    mouseclick(".key30", 932);
    mouseclick(".key31", 988);
 
-
-
   document.addEventListener("keydown", function(){
     vca.gain.value = .65;
   });
@@ -115,6 +106,19 @@ console.log('Hello World from Webpacker')
 
   });
 
+
+  // var keyress = function(event, frequency, key){
+  //   event.w.keypress(function(){
+  //     $(key).addClass("pressed");
+  //    vco.frequency.value = frequency;
+  //   });
+
+  // };
+
+
+
+  // keyress(90, 174, ".key1");
+  // keyress(83, 185, ".key2");
 
 
     var play = function(event){

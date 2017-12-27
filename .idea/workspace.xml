@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97337b6a-459d-4c87-806d-5b32676ddb9c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/pages.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/pages.coffee" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/_keyboard.html.haml" afterPath="$PROJECT_DIR$/app/views/pages/_keyboard.html.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/_mailer.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/_mailer.html.erb" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/packs/application.js" afterPath="$PROJECT_DIR$/app/javascript/packs/application.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />

@@ -306,11 +306,17 @@ justify-content: space-between;
 }
 
 @media screen and (max-width:1300px){
-
+body, .btn{
+font-size,: .8rem;
+}
+h6{
+  font-size: .85rem;
+}
   .page{
     display:block;
   }
 }
+
 
 
 @media screen and (max-width:575px){
