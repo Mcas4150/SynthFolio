@@ -199,19 +199,19 @@ console.log('Hello World from Webpacker')
         vco.frequency.value = 493;
         $(".key19").addClass("pressed");
         break;
-      case 51:
+      case 69:
         vco.frequency.value = 523;
         $(".key20").addClass("pressed");
         break;
-      case 69:
+      case 52:
         vco.frequency.value = 554;
         $(".key21").addClass("pressed");
         break;
-      case 52:
+      case 82:
         vco.frequency.value = 587;
         $(".key22").addClass("pressed");
         break;
-      case 82:
+      case 53:
         vco.frequency.value = 622;
          $(".key23").addClass("pressed");
         break;
@@ -219,29 +219,33 @@ console.log('Hello World from Webpacker')
         vco.frequency.value = 659;
         $(".key24").addClass("pressed");
         break;
-      case 54:
+      case 89:
         vco.frequency.value = 698;
         $(".key25").addClass("pressed");
         break;
-      case 89:
+      case 55:
         vco.frequency.value = 749;
         $(".key26").addClass("pressed");
         break;
-      case 55:
+      case 85:
         vco.frequency.value = 783;
         $(".key27").addClass("pressed");
         break;
-      case 85:
+      case 56:
         vco.frequency.value = 830;
         $(".key28").addClass("pressed");
         break;
-      case 56:
+      case 73:
         vco.frequency.value = 880;
         $(".key29").addClass("pressed");
         break;
-      case 73:
+      case 57:
         vco.frequency.value = 932;
         $(".key30").addClass("pressed");
+        break;
+        case 79:
+        vco.frequency.value = 988;
+        $(".key31").addClass("pressed");
         break;
       default:
         vco.frequency.value = null;
@@ -253,16 +257,6 @@ document.addEventListener("keydown", play);
 document.addEventListener("touchstart", play);
 
 
-//   var slider = document.getElementById("myRange");
-// var output = document.getElementById("value");
-// output.innerHTML = slider.value; // Display the default slider value
-// lowpassFilter.frequency = slider.value*10;
-
-// Update the current slider value (each time you drag the slider handle)
-// slider.oninput = function() {
-//     output.innerHTML = this.value;
-//     lowpassFilter.frequency = this.value*10;
-// }
-
+a
 
 });
