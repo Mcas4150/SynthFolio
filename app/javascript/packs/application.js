@@ -14,7 +14,11 @@ console.log('Hello World from Webpacker')
       var context = new (window.AudioContext || window.webkitAudioContext)();
       // var tuna = new Tuna(context);
 
-var analyser = context.createAnalyser();
+      var analyser = context.createAnalyser(),
+          master = context.createGain();
+
+
+          master.gain.value = 1;
     // var oscillator = function(frequency){
         // VCO
 
@@ -38,8 +42,20 @@ var analyser = context.createAnalyser();
         // Connect
           vco.connect(lowpassFilter);
           lowpassFilter.connect(vca);
-          vca.connect(analyser);
+          vca.connect(master);
+          master.connect(analyser);
           analyser.connect(context.destination);
+
+        // Slider Controls
+
+        var masterGain = document.querySelector('.master-gain');
+        masterGain.oninput = function (){
+          changeMaster(masterGain.value);
+        }
+
+        function changeMaster(vol){
+          master.gain.value = vol;
+        }
 
 
 var canvas = document.querySelector('.visualizer');
@@ -307,6 +323,47 @@ draw();
 document.addEventListener("keydown", play);
 document.addEventListener("touchstart", play);
 
+
+$('.master-gain').knob(
+  {
+    'min':0,
+    'max':1,
+    'step':0.05,
+    'width': 75,
+    'height': 75,
+    'angleOffset': 225,
+    'angleArc': 270,
+    'fgColor': "#bbbbbc",
+    'change': function (){
+          changeMaster(masterGain.value);
+        function changeMaster(vol){
+          master.gain.value = vol;
+        }
+        }
+
+
+
+  });
+
+
+  // $(function(){
+  //   var falseslider = $('#falseslider'),
+  //       min = falseslider.attr('min'),
+  //       max = falseslider.attr('max');
+
+  //       falseslider.hide();
+
+  //       $('#knobby').knobknob({
+  //         snap : 10,
+  //         value: 250,
+  //         turn : function(ratio){
+  //           // Changing the value of the hidden slider
+  //           falseslider.val(Math.round(ratio*(max-min) + min));
+  //           }
+
+  //       });
+
+  // });
 
 
 // var contactWidth = document.getElementById('contact').offsetWidth;
