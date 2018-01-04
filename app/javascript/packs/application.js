@@ -15,9 +15,8 @@ console.log('Hello World from Webpacker')
       // var tuna = new Tuna(context);
 
       var analyser = context.createAnalyser(),
-          master = context.createGain();
-
-
+          master = context.createGain()
+           a = d = r = 0.1, s = 1;
           master.gain.value = 1;
     // var oscillator = function(frequency){
         // VCO
@@ -39,6 +38,13 @@ console.log('Hello World from Webpacker')
             frequency: 500
           });
 
+        var Attack = document.querySelector('.attack'),
+            Decay = document.querySelector('.decay'),
+            Sustain = document.querySelector('.sustain'),
+            Release = document.querySelector('.release');
+
+
+
         // Connect
           vco.connect(lowpassFilter);
           lowpassFilter.connect(vca);
@@ -47,6 +53,39 @@ console.log('Hello World from Webpacker')
           analyser.connect(context.destination);
 
         // Slider Controls
+          Attack.oninput = function () {
+             changeAttack(Attack.value);
+          }
+
+          Decay.oninput = function () {
+              changeDecay(Decay.value);
+          }
+
+          Sustain.oninput = function () {
+              changeSustain(Sustain.value);
+          }
+
+          Release.oninput = function () {
+              changeRelease(Release.value);
+          }
+
+
+          function changeAttack(val) {
+               a = +val;
+          }
+
+          function changeDecay(val) {
+              d = +val;
+          }
+
+          function changeSustain(val) {
+              s = +val;
+          }
+
+          function changeRelease(val) {
+              r = +val;
+          }
+
 
         var masterGain = document.querySelector('.master-gain');
         masterGain.oninput = function (){
@@ -57,6 +96,21 @@ console.log('Hello World from Webpacker')
           master.gain.value = vol;
         }
 
+
+        function envGenOn(vcaGain, a, d, s) {
+            var now = context.currentTime;
+            vcaGain.cancelScheduledValues(0);
+            vcaGain.setValueAtTime(0, now);
+            vcaGain.linearRampToValueAtTime(1, now + a);
+            vcaGain.linearRampToValueAtTime(s, now + a + d);
+        }
+
+        function envGenOff(vcaGain, r) {
+            var now = context.currentTime;
+            vcaGain.cancelScheduledValues(0);
+            vcaGain.setValueAtTime(vcaGain.value, now);
+            vcaGain.linearRampToValueAtTime(0, now + r);
+        }
 
 var canvas = document.querySelector('.visualizer');
 var canvasCtx = canvas.getContext("2d");
@@ -112,10 +166,12 @@ draw();
 
     $('.key').mousedown(function(){
       vca.gain.value = .8;
+      envGenOn(vca.gain, a, d, s);
     });
 
     $('.key').mouseup(function() {
-      vca.gain.value = 0;
+
+      envGenOff(vca.gain, r);
     });
 
    var mouseclick = function(key, frequency){
@@ -159,9 +215,11 @@ draw();
 
   document.addEventListener("keydown", function(){
     vca.gain.value = .65;
+    envGenOn(vca.gain, a, d, s);
   });
   document.addEventListener("keyup", function(){
-    vca.gain.value = 0;
+
+    envGenOff(vca.gain, r);
     $(".key").removeClass("pressed");
     $(".key").removeClass("blackpressed");
   });
