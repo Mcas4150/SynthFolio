@@ -18,8 +18,6 @@ var analyser = context.createAnalyser();
     // var oscillator = function(frequency){
         // VCO
 
-
-
           var vco = context.createOscillator();
           vco.type = "sine";
           vco.start(0);
@@ -51,10 +49,7 @@ var canvasCtx = canvas.getContext("2d");
   WIDTH = canvas.width;
   HEIGHT = canvas.height;
 
-
-
-
-          analyser.fftSize = 2048;
+analyser.fftSize = 2048;
 var bufferLength = analyser.frequencyBinCount;
 var dataArray = new Uint8Array(bufferLength);
 
@@ -162,7 +157,6 @@ draw();
     vca.gain.value = 0;
 
   });
-
 
   // var keyress = function(event, frequency, key){
   //   event.w.keypress(function(){

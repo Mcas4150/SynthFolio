@@ -1,0 +1,27 @@
+.slider-wrapper {
+  display: inline-block;
+  width: 20px;
+  height: 100px;
+  padding: 0;
+}
+
+.slider-wrapper input {
+  width: 100px;
+  height: 20px;
+  margin: 0;
+  transform-origin: 75px 75px;
+  transform: rotate(-90deg) translateX(50px) translateY(-3px);
+}
+
+.slider-wrapper .decay{
+  transform: rotate(-90deg) translateX(77px) translateY(18px);
+}
+
+.slider-wrapper .sustain{
+  transform: rotate(-90deg) translateX(104px) translateY(40px);
+}
+
+
+.slider-wrapper .release{
+  transform: rotate(-90deg) translateX(131px) translateY(65px);
+}

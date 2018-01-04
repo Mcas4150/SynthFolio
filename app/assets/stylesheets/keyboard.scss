@@ -14,7 +14,9 @@
 
 }
 
-
+.key:hover{
+  cursor: pointer;
+}
 
 .key.pressed, .key:active {
     background: #f4f3f3;
