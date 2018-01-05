@@ -1,18 +1,22 @@
 .projects
   .beige
-    %h3.drop.cen PROJECTS
+    %h3.drop.cen CONTROLS
     .green
       .row
         .col-xs-4
           = render "ADSR"
         .col-xs-4.white2
-          .pad.ramabutton.button-active La Rama
-          .pad.bellabutton Isabella
-          .pad.commonsbutton Commons
+          %label.switch
+          %label.switch
+            / %input{ type:"checkbox"}
+            / %span.slider
+          / .pad.ramabutton.button-active La Rama
+          / .pad.bellabutton Isabella
+          / .pad.commonsbutton Commons
         .col-xs-4
           = render "Mod"
   .beige.soon
-    %h3.drop.cen SOON
+    %h3.drop.cen
     .green.bottom
       = render "oscilloscope"
 

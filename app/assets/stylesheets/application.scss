@@ -89,6 +89,17 @@ body {
 
 
 
+.grey{
+      background-color: #C1C1C1;
+    color: black;
+    border: 1.5px solid black;
+    padding: 5px;
+  margin: 5px;
+  text-align:center;
+  font-family: "Orbitron";
+    font-size: .9em;
+}
+
 .white{
   border: 1.5px solid white;
   border-radius: 3px;
@@ -241,7 +252,7 @@ border-right: 3px solid white;
 }
 
 .space{
-  color: white;
+  color: #c1c1c1;
   display: flex;
   justify-content: space-between;
 }
@@ -253,6 +264,7 @@ border-right: 3px solid white;
 }
 
 .detail{
+  color: #c1c1c1;
   font-size: .8em;
   font-weight: 400;
   padding-top: 2px;
@@ -260,6 +272,7 @@ border-right: 3px solid white;
 
 .even{
   height: 205px;
+  font-size: .9rem;
 }
 
 
@@ -289,6 +302,11 @@ border-right: 3px solid white;
   margin-top: 0px;
 }
 
+.between{
+    display: flex;
+    justify-content: space-between;
+}
+
 .player{
   height: 50px;
   width: 400px;
@@ -301,6 +319,9 @@ border-right: 3px solid white;
 
 .button-active{
   color: black;
+  background-color: #c1c1c1;
+  border: 2px solid white;
+  border-radius: 3px;
 }
 
 .links{
@@ -323,7 +344,7 @@ h6{
 
 
 @media screen and (max-width:575px){
-.knob, .knob2, .toggle, .power, .middle-panel, .skills, .education, .volunteer, .work, .section, .soon, .desktop, .screw, .small, .version{
+.knob, .knob2, .toggle, .power, .middle-panel, .skills, .education, .volunteer, .work, .section, .desktop, .screw, .small, .version{
     display:none;
   }
 

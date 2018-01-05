@@ -32,11 +32,9 @@ console.log('Hello World from Webpacker')
 
         // LOWPASS FILTER
 
-          // lowpassFilter = context.createBiquadFilter({
-          //   // type: lowpass,
-          //   // q: .5,
-          //   frequency: 500
-          // });
+          lowPassFilter = context.createBiquadFilter();
+          lowPassFilter.type = "lowpass";
+
 
         //  Low Frequency Oscillator (LFO)
           var lfo = context.createOscillator();
@@ -60,11 +58,12 @@ console.log('Hello World from Webpacker')
 
 
         // Connect
-          vco.connect(vca);
-
+          vco.connect(lowPassFilter);
+          lowPassFilter.connect(vca);
           lfo.connect(lfoGain);
           lfoGain.connect(vca.gain);
           vca.connect(master);
+
           master.connect(analyser);
           analyser.connect(context.destination);
 
@@ -85,20 +84,25 @@ console.log('Hello World from Webpacker')
               changeRelease(Release.value);
           }
 
+          // Cutoff.oninput = function(){
+          //   changeCutoff(Cutoff.value);
+          // }
 
-          LFOinput.oninput = function () {
-            lfo.frequency.value = this.value;
-            lfo.frequency.cancelScheduledValues(0);
-            lfo.frequency.setValueAtTime(this.value, context.currentTime);
-        }
+          // Resonance.oninput = function(){
+          //   changeResonance(Resonance.value);
+          // }
 
-          LFOintensity.oninput = function () {
-              lfoGain.gain.value = this.value;
-              lfoGain.gain.cancelScheduledValues(0);
-              lfoGain.gain.setValueAtTime(this.value, context.currentTime);
-          }
+          // LFOinput.oninput = function () {
+          //   lfo.frequency.value = this.value;
+          //   lfo.frequency.cancelScheduledValues(0);
+          //   lfo.frequency.setValueAtTime(this.value, context.currentTime);
+          // }
 
-
+          // LFOintensity.oninput = function () {
+          //     lfoGain.gain.value = this.value;
+          //     lfoGain.gain.cancelScheduledValues(0);
+          //     lfoGain.gain.setValueAtTime(this.value, context.currentTime);
+          // }
 
 
           function changeAttack(val) {
@@ -117,6 +121,13 @@ console.log('Hello World from Webpacker')
               r = +val;
           }
 
+          // function changeCutoff(val){
+          //   lowPassFilter.frequency.value = val;
+          // }
+
+          // function changeResonance(val){
+          //   lowPassFilter.Q.value = val;
+          // }
 
         var masterGain = document.querySelector('.master-gain');
         masterGain.oninput = function (){
@@ -124,7 +135,7 @@ console.log('Hello World from Webpacker')
         }
 
         function changeMaster(vol){
-          master.gain.value = vol;
+          master.gain.value = vol/100;
         }
 
 
@@ -145,6 +156,108 @@ console.log('Hello World from Webpacker')
             // vcaGain.setValueAtTime(vcaGain.value, now);
             // vcaGain.linearRampToValueAtTime(0, now + r);
         }
+
+      $('.master-gain').knob(
+        {
+          'min':0,
+          'max':100,
+          'step':1,
+          'width': 75,
+          'height': 75,
+          'angleOffset': 225,
+          'angleArc': 270,
+          'displayInput': false,
+          'fgColor': "white",
+          'bgColor': "#bbbbbc",
+          'change': function (){
+                changeMaster(masterGain.value);
+              function changeMaster(vol){
+                master.gain.value = vol/100;
+              }
+              }
+        });
+
+      $('.cutoff').knob(
+        {
+          'min':0,
+          'max':1000,
+          'step':5,
+          'width': 42,
+          'height': 42,
+          'angleOffset': 225,
+          'angleArc': 270,
+          'displayInput': false,
+          'fgColor': "white",
+          'bgColor': "#bbbbbc",
+          'change': function (){
+                changeCutoff(Cutoff.value);
+              function changeCutoff(val){
+                 lowPassFilter.frequency.value = val;
+              }
+              }
+        });
+
+      $('.resonance').knob(
+        {
+          'min':0,
+          'max':10,
+          'step':0.05,
+          'width': 42,
+          'height': 42,
+          'angleOffset': 225,
+          'angleArc': 270,
+          'displayInput': false,
+          'fgColor': "white",
+          'bgColor': "#bbbbbc",
+          'change': function (){
+                changeResonance(Resonance.value);
+              function changeResonance(val){
+                 lowPassFilter.Q.value = val;
+              }
+              }
+        });
+
+        $('.lfo').knob(
+        {
+          'min':0,
+          'max':100,
+          'step':1,
+          'width': 42,
+          'height': 42,
+          'angleOffset': 225,
+          'angleArc': 270,
+          'displayInput': false,
+          'fgColor': "white",
+          'bgColor': "#bbbbbc",
+          'change':  function ()
+            {
+              lfo.frequency.value = LFOinput.value;
+              lfo.frequency.cancelScheduledValues(0);
+              lfo.frequency.setValueAtTime(LFOinput.value, context.currentTime);
+            }
+        });
+
+          $('.intensity').knob(
+        {
+          'min':0,
+          'max':1,
+          'step':0.05,
+          'width': 42,
+          'height': 42,
+          'angleOffset': 225,
+          'angleArc': 270,
+          'displayInput': false,
+          'fgColor': "white",
+          'bgColor': "#bbbbbc",
+          'change':  function () {
+              lfoGain.gain.value = LFOintensity.value;
+              lfoGain.gain.cancelScheduledValues(0);
+              lfoGain.gain.setValueAtTime(LFOintensity.value, context.currentTime);
+          }
+        });
+
+
+
 
 var canvas = document.querySelector('.visualizer');
 var canvasCtx = canvas.getContext("2d");
@@ -252,7 +365,7 @@ draw();
   });
   document.addEventListener("keyup", function(){
 
-    envGenOff(master.gain, r);
+    envGenOff(vca.gain, r);
     $(".key").removeClass("pressed");
     $(".key").removeClass("blackpressed");
   });
@@ -415,28 +528,15 @@ document.addEventListener("keydown", play);
 document.addEventListener("touchstart", play);
 
 
-$('.master-gain').knob(
-  {
-    'min':0,
-    'max':1,
-    'step':0.05,
-    'width': 75,
-    'height': 75,
-    'angleOffset': 225,
-    'angleArc': 270,
-    'fgColor': "#bbbbbc",
-    'change': function (){
-          changeMaster(masterGain.value);
-        function changeMaster(vol){
-          master.gain.value = vol;
-        }
-        }
 
 
 
-  });
 
 
+
+ // Cutoff.oninput = function(){
+          //   changeCutoff(Cutoff.value);
+          // }
   // $(function(){
   //   var falseslider = $('#falseslider'),
   //       min = falseslider.attr('min'),
