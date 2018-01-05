@@ -136,6 +136,10 @@ padding:5px;
 
 }
 
+.quarter{
+  width:25%;
+  color:white;
+}
 
 .description {
   max-width: 321px;
@@ -145,7 +149,9 @@ border-left: 3px solid white;
 border-right: 3px solid white;
 }
 
-
+.locked{
+      height: 114px;
+}
 
 .contact, .projects, .experience, .knowledge {
   padding: 0px 5px;
