@@ -164,11 +164,11 @@ console.log('Hello World from Webpacker')
           'step':1,
           'width': 75,
           'height': 75,
-          'angleOffset': 200,
-          'angleArc': 320,
+          'angleOffset': 180,
+          'angleArc': 365,
           'displayInput': false,
-          'fgColor': "white",
-          'bgColor': "#bbbbbc",
+          'fgColor': "ghostwhite",
+          'bgColor': "#a0a0a0",
           'change': function (){
                 changeMaster(masterGain.value);
               function changeMaster(vol){
@@ -184,11 +184,11 @@ console.log('Hello World from Webpacker')
           'step':5,
           'width': 42,
           'height': 42,
-          'angleOffset': 200,
-          'angleArc': 320,
+          'angleOffset': 180,
+          'angleArc': 365,
           'displayInput': false,
-          'fgColor': "white",
-          'bgColor': "#bbbbbc",
+          'fgColor': "ghostwhite",
+          'bgColor': "#a0a0a0",
           'change': function (){
                 changeCutoff(Cutoff.value);
               function changeCutoff(val){
@@ -204,11 +204,11 @@ console.log('Hello World from Webpacker')
           'step':0.05,
           'width': 42,
           'height': 42,
-          'angleOffset': 200,
-          'angleArc': 320,
+          'angleOffset': 180,
+          'angleArc': 365,
           'displayInput': false,
-          'fgColor': "white",
-          'bgColor': "#bbbbbc",
+          'fgColor': "ghostwhite",
+          'bgColor': "#a0a0a0",
           'change': function (){
                 changeResonance(Resonance.value);
               function changeResonance(val){
@@ -224,11 +224,11 @@ console.log('Hello World from Webpacker')
           'step':1,
           'width': 42,
           'height': 42,
-          'angleOffset': 200,
-          'angleArc': 320,
+          'angleOffset': 180,
+          'angleArc': 365,
           'displayInput': false,
-          'fgColor': "white",
-          'bgColor': "#bbbbbc",
+          'fgColor': "ghostwhite",
+          'bgColor': "#a0a0a0",
           'change':  function ()
             {
               lfo.frequency.value = LFOinput.value;
@@ -244,11 +244,11 @@ console.log('Hello World from Webpacker')
           'step':0.05,
           'width': 42,
           'height': 42,
-          'angleOffset': 200,
-          'angleArc': 320,
+          'angleOffset': 180,
+          'angleArc': 365,
           'displayInput': false,
-          'fgColor': "white",
-          'bgColor': "#bbbbbc",
+          'fgColor': "ghostwhite",
+          'bgColor': "#a0a0a0",
           'change':  function () {
               lfoGain.gain.value = LFOintensity.value;
               lfoGain.gain.cancelScheduledValues(0);
