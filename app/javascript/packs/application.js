@@ -32,22 +32,38 @@ console.log('Hello World from Webpacker')
 
         // LOWPASS FILTER
 
-          lowpassFilter = context.createBiquadFilter({
-            // type: lowpass,
-            // q: .5,
-            frequency: 500
-          });
+          // lowpassFilter = context.createBiquadFilter({
+          //   // type: lowpass,
+          //   // q: .5,
+          //   frequency: 500
+          // });
+
+        //  Low Frequency Oscillator (LFO)
+          var lfo = context.createOscillator();
+              lfo.type = "sine";
+              lfo.start(0);
+
+              lfoGain = context.createGain();
+              lfoGain.gain.value = 0;
+
 
         var Attack = document.querySelector('.attack'),
             Decay = document.querySelector('.decay'),
             Sustain = document.querySelector('.sustain'),
-            Release = document.querySelector('.release');
+            Release = document.querySelector('.release'),
+            Cutoff = document.querySelector('.cutoff'),
+            Resonance = document.querySelector('.resonance'),
+            LFOinput = document.querySelector('.lfo'),
+            LFOintensity = document.querySelector('.intensity');
+
 
 
 
         // Connect
-          vco.connect(lowpassFilter);
-          lowpassFilter.connect(vca);
+          vco.connect(vca);
+
+          lfo.connect(lfoGain);
+          lfoGain.connect(vca.gain);
           vca.connect(master);
           master.connect(analyser);
           analyser.connect(context.destination);
@@ -68,6 +84,21 @@ console.log('Hello World from Webpacker')
           Release.oninput = function () {
               changeRelease(Release.value);
           }
+
+
+          LFOinput.oninput = function () {
+            lfo.frequency.value = this.value;
+            lfo.frequency.cancelScheduledValues(0);
+            lfo.frequency.setValueAtTime(this.value, context.currentTime);
+        }
+
+          LFOintensity.oninput = function () {
+              lfoGain.gain.value = this.value;
+              lfoGain.gain.cancelScheduledValues(0);
+              lfoGain.gain.setValueAtTime(this.value, context.currentTime);
+          }
+
+
 
 
           function changeAttack(val) {
@@ -110,6 +141,9 @@ console.log('Hello World from Webpacker')
             vcaGain.cancelScheduledValues(0);
             vcaGain.setValueAtTime(vcaGain.value, now);
             vcaGain.linearRampToValueAtTime(0, now + r);
+            // vcaGain.cancelScheduledValues(0);
+            // vcaGain.setValueAtTime(vcaGain.value, now);
+            // vcaGain.linearRampToValueAtTime(0, now + r);
         }
 
 var canvas = document.querySelector('.visualizer');
@@ -165,7 +199,6 @@ draw();
 
 
     $('.key').mousedown(function(){
-      vca.gain.value = .8;
       envGenOn(vca.gain, a, d, s);
     });
 
@@ -214,12 +247,12 @@ draw();
    mouseclick(".key31", 988);
 
   document.addEventListener("keydown", function(){
-    vca.gain.value = .65;
+
     envGenOn(vca.gain, a, d, s);
   });
   document.addEventListener("keyup", function(){
 
-    envGenOff(vca.gain, r);
+    envGenOff(master.gain, r);
     $(".key").removeClass("pressed");
     $(".key").removeClass("blackpressed");
   });

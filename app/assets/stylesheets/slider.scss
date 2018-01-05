@@ -13,15 +13,16 @@
   transform: rotate(-90deg) translateX(50px) translateY(-3px);
 }
 
-.slider-wrapper .decay{
+.slider-wrapper .decay, .slider-wrapper .resonance{
   transform: rotate(-90deg) translateX(77px) translateY(18px);
 }
 
-.slider-wrapper .sustain{
+.slider-wrapper .sustain, .slider-wrapper .lfo {
   transform: rotate(-90deg) translateX(104px) translateY(40px);
 }
 
 
-.slider-wrapper .release{
+.slider-wrapper .release, .slider-wrapper .intensity{
   transform: rotate(-90deg) translateX(131px) translateY(65px);
 }
+
