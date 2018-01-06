@@ -1,3 +1,62 @@
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+legend {
+  font-size: 0.75rem;
+    padding: 0;
+    margin: 0;
+}
+label {
+    font-size: 0.75rem;
+    cursor: pointer;
+    display: block;
+    float: left;
+    background-color: #ccc;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    border-color: #666;
+    background-image: -moz-linear-gradient(rgba(255,255,255,.2), rgba(0,0,0,.2));
+    background-image: -webkit-linear-gradient(rgba(255,255,255,.2), rgba(0,0,0,.2));
+    background-image: linear-gradient(rgba(255,255,255,.2), rgba(0,0,0,.2));
+    box-shadow: 1px 1px 1px rgba(255,255,255,.2) inset, -1px -1px 1px rgba(0,0,0,.2) inset;
+}
+label:first-child {
+    border-left-width: 1px;
+    border-top-left-radius: .2em;
+    border-bottom-left-radius: .2em;
+}
+label:last-child {
+    border-top-right-radius: .2em;
+    border-bottom-right-radius: .2em;
+}
+label.selected {
+        background-color: #c1c1c1;
+    color: black;
+    border-color: #666;
+    background-image: -moz-linear-gradient(rgba(0,0,0,.2), rgba(255,255,255,.2));
+    background-image: -webkit-linear-gradient(rgba(0,0,0,.2), rgba(255,255,255,.2));
+    background-image: linear-gradient(rgba(0,0,0,.2), rgba(255,255,255,.2));
+    box-shadow: 1px 1px 1px rgba(0,0,0,.2) inset;
+}
+
+input:checked {
+        background-color: #c1c1c1;
+    color: black;
+    border-color: #666;
+    background-image: -moz-linear-gradient(rgba(0,0,0,.2), rgba(255,255,255,.2));
+    background-image: -webkit-linear-gradient(rgba(0,0,0,.2), rgba(255,255,255,.2));
+    background-image: linear-gradient(rgba(0,0,0,.2), rgba(255,255,255,.2));
+    box-shadow: 1px 1px 1px rgba(0,0,0,.2) inset;
+}
+
+
+input[type="radio"] {
+   position: absolute;
+   top: -9999px;
+   left: -9999px;
+}
 
 
 

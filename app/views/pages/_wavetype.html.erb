@@ -1,0 +1,37 @@
+<!-- <select  class="wavetype">
+                <option value="sine">sine</option>
+                <option value="square">square</option>
+                <option value="sawtooth">sawtooth</option>
+                <option value="triangle">triangle</option>
+</select> -->
+<fieldset>
+    <legend>VCO TYPE</legend>
+
+    <div class="center">
+        <label class="selected">
+          Sin
+          <input class="vco-sine" name="vco-type" type="radio" value="sine" checked />
+        </label>
+        <label>
+          Sqr
+          <input class="vco-square" name="vco-type" type="radio" value="square" />
+        </label>
+        <label>
+          Saw
+          <input class="vco-saw" name="vco-type" type="radio" value="sawtooth" />
+        </label>
+        <label>
+          Tri
+          <input class="vco-triangle" name="vco-type" type="radio" value="triangle" />
+        </label>
+    </div>
+</fieldset>
+
+
+<legend>EG</legend>
+<label>Hi
+   <input class='eg-high' type='radio' name='egMode' value='5' />
+</label>
+<label class="selected">Lo
+  <input class='eg-low' type='radio' name='egMode' value='1' checked />
+</label>

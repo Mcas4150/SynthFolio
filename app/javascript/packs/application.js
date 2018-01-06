@@ -16,7 +16,7 @@ console.log('Hello World from Webpacker')
 
       var analyser = context.createAnalyser(),
           master = context.createGain()
-           a = d = r = 0.1, s = 1;
+           a = d = r = 0.1, s = 1, egMode = 1;
           master.gain.value = 1;
     // var oscillator = function(frequency){
         // VCO
@@ -52,7 +52,16 @@ console.log('Hello World from Webpacker')
             Cutoff = document.querySelector('.cutoff'),
             Resonance = document.querySelector('.resonance'),
             LFOinput = document.querySelector('.lfo'),
-            LFOintensity = document.querySelector('.intensity');
+            LFOintensity = document.querySelector('.intensity'),
+            // waveType = document.querySelector('.wavetype'),
+            // vcoType = document.querySelector('.vco-type'),
+            vcoSine = document.querySelector('.vco-sine'),
+            vcoSaw = document.querySelector('.vco-saw'),
+            vcoSquare = document.querySelector('.vco-square'),
+            vcoTriangle = document.querySelector('.vco-triangle'),
+            egHigh = document.querySelector('.egs-high'),
+            egLow = document.querySelector('.egs-low');
+
 
 
 
@@ -84,7 +93,27 @@ console.log('Hello World from Webpacker')
               changeRelease(Release.value);
           }
 
-          // Cutoff.oninput = function(){
+          // vcoType.onchange = function(){
+          //   changeVcoType(vcoType.value);
+          // }
+
+    //       waveType.onchange = function () {
+    //           changeWaveType(waveType.value);
+    //       }
+
+
+            // addEventListenerBySelector('[name="vco-type"]', 'change', function () {
+            // egMode = this.value;
+            //   }, true);
+
+            addEventListenerBySelector('[name="egMode"]', 'change', function () {
+    egMode = this.value;
+}, true);
+
+                   addEventListenerBySelector('[name="vco-type"]', 'change', function () {
+    vco.type = this.value;
+}, true);
+// Cutoff.oninput = function(){
           //   changeCutoff(Cutoff.value);
           // }
 
@@ -104,6 +133,14 @@ console.log('Hello World from Webpacker')
           //     lfoGain.gain.setValueAtTime(this.value, context.currentTime);
           // }
 
+          function addEventListenerBySelector(selector, event, fn) {
+    var list = document.querySelectorAll(selector);
+    for (var i = 0, len = list.length; i < len; i++) {
+        list[i].addEventListener(event, fn, false);
+    }
+}
+
+
 
           function changeAttack(val) {
                a = +val;
@@ -120,6 +157,12 @@ console.log('Hello World from Webpacker')
           function changeRelease(val) {
               r = +val;
           }
+
+
+
+          // function changeVcoType(type) {
+          //     vco.type = type;
+          // }
 
           // function changeCutoff(val){
           //   lowPassFilter.frequency.value = val;
@@ -141,6 +184,8 @@ console.log('Hello World from Webpacker')
 
         function envGenOn(vcaGain, a, d, s) {
             var now = context.currentTime;
+            a *= egMode;
+            d *= egMode;
             vcaGain.cancelScheduledValues(0);
             vcaGain.setValueAtTime(0, now);
             vcaGain.linearRampToValueAtTime(1, now + a);
@@ -149,6 +194,7 @@ console.log('Hello World from Webpacker')
 
         function envGenOff(vcaGain, r) {
             var now = context.currentTime;
+            r *= egMode;
             vcaGain.cancelScheduledValues(0);
             vcaGain.setValueAtTime(vcaGain.value, now);
             vcaGain.linearRampToValueAtTime(0, now + r);
@@ -526,7 +572,6 @@ draw();
 
 document.addEventListener("keydown", play);
 document.addEventListener("touchstart", play);
-
 
 
 

@@ -260,7 +260,10 @@ border-right: 3px solid white;
   font-size:.7em;
 }
 
-
+.center{
+  display:flex;
+  justify-content: center;
+}
 
 .year{
   width: 25%;
