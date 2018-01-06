@@ -16,9 +16,9 @@ console.log('Hello World from Webpacker')
 
       var analyser = context.createAnalyser(),
           master = context.createGain()
-           a = d = r = 0.1, s = 1, egMode = 1;
+           a = d = r = 0.1, s = 1, egMode = 1, lfoMode = 1;
           master.gain.value = 1;
-    // var oscillator = function(frequency){
+
         // VCO
 
           var vco = context.createOscillator();
@@ -40,7 +40,6 @@ console.log('Hello World from Webpacker')
           var lfo = context.createOscillator();
               lfo.type = "sine";
               lfo.start(0);
-
               lfoGain = context.createGain();
               lfoGain.gain.value = 0;
 
@@ -63,6 +62,8 @@ console.log('Hello World from Webpacker')
             lfoTriangle = document.querySelector('.lfo-triangle'),
             egHigh = document.querySelector('.egs-high'),
             egLow = document.querySelector('.egs-low');
+            lfoHigh = document.querySelector('.lfo-high'),
+            lfoLow = document.querySelector('.lfo-low');
 
 
 
@@ -109,16 +110,21 @@ console.log('Hello World from Webpacker')
             //   }, true);
 
             addEventListenerBySelector('[name="egMode"]', 'change', function () {
-    egMode = this.value;
-}, true);
+              egMode = this.value;
+            }, true);
+                      addEventListenerBySelector('[name="lfoMode"]', 'change', function () {
+              lfoMode = this.value;
+            }, true);
 
             addEventListenerBySelector('[name="vco-type"]', 'change', function () {
-    vco.type = this.value;
-}, true);
+              vco.type = this.value;
+            }, true);
 
             addEventListenerBySelector('[name="lfo-type"]', 'change', function () {
-    lfo.type = this.value;
-}, true);
+                lfo.type = this.value;
+            }, true);
+
+
 // Cutoff.oninput = function(){
           //   changeCutoff(Cutoff.value);
           // }
@@ -140,11 +146,11 @@ console.log('Hello World from Webpacker')
           // }
 
           function addEventListenerBySelector(selector, event, fn) {
-    var list = document.querySelectorAll(selector);
-    for (var i = 0, len = list.length; i < len; i++) {
-        list[i].addEventListener(event, fn, false);
-    }
-}
+              var list = document.querySelectorAll(selector);
+              for (var i = 0, len = list.length; i < len; i++) {
+                  list[i].addEventListener(event, fn, false);
+              }
+          }
 
 
 
@@ -164,11 +170,6 @@ console.log('Hello World from Webpacker')
               r = +val;
           }
 
-
-
-          // function changeVcoType(type) {
-          //     vco.type = type;
-          // }
 
           // function changeCutoff(val){
           //   lowPassFilter.frequency.value = val;
@@ -204,6 +205,9 @@ console.log('Hello World from Webpacker')
             vcaGain.cancelScheduledValues(0);
             vcaGain.setValueAtTime(vcaGain.value, now);
             vcaGain.linearRampToValueAtTime(0, now + r);
+            // lfoGain.cancelScheduledValues(0);
+            // lfoGain.setValueAtTime(vcaGain.value, now);
+            // lfoGain.linearRampToValueAtTime(0, now + r);
             // vcaGain.cancelScheduledValues(0);
             // vcaGain.setValueAtTime(vcaGain.value, now);
             // vcaGain.linearRampToValueAtTime(0, now + r);
@@ -271,9 +275,9 @@ console.log('Hello World from Webpacker')
 
         $('.lfo').knob(
         {
-          'min':0,
-          'max':100,
-          'step':1,
+          'min': 0,
+          'max': (100 * lfoMode),
+          'step': (1 * lfoMode),
           'width': 42,
           'height': 42,
           'angleOffset': 180,
@@ -283,9 +287,10 @@ console.log('Hello World from Webpacker')
           'bgColor': "#a0a0a0",
           'change':  function ()
             {
-              lfo.frequency.value = LFOinput.value;
+              lfoValue = LFOinput.value * lfoMode;
+              lfo.frequency.value = lfoValue;
               lfo.frequency.cancelScheduledValues(0);
-              lfo.frequency.setValueAtTime(LFOinput.value, context.currentTime);
+              lfo.frequency.setValueAtTime((lfoValue), context.currentTime);
             }
         });
 
@@ -368,8 +373,8 @@ draw();
     });
 
     $('.key').mouseup(function() {
-
-      envGenOff(vca.gain, r);
+         envGenOff(vca.gain, r);
+      // envGenOff(vca.gain, lfoGain.gain, r);
     });
 
    var mouseclick = function(key, frequency){
@@ -412,12 +417,11 @@ draw();
    mouseclick(".key31", 988);
 
   document.addEventListener("keydown", function(){
-
     envGenOn(vca.gain, a, d, s);
   });
   document.addEventListener("keyup", function(){
 
-    envGenOff(vca.gain, r);
+    envGenOff(vca.gain, lfoGain.gain, r);
     $(".key").removeClass("pressed");
     $(".key").removeClass("blackpressed");
   });
