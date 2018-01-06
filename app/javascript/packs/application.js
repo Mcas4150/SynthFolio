@@ -53,12 +53,14 @@ console.log('Hello World from Webpacker')
             Resonance = document.querySelector('.resonance'),
             LFOinput = document.querySelector('.lfo'),
             LFOintensity = document.querySelector('.intensity'),
-            // waveType = document.querySelector('.wavetype'),
-            // vcoType = document.querySelector('.vco-type'),
             vcoSine = document.querySelector('.vco-sine'),
             vcoSaw = document.querySelector('.vco-saw'),
             vcoSquare = document.querySelector('.vco-square'),
             vcoTriangle = document.querySelector('.vco-triangle'),
+            lfoSine = document.querySelector('.lfo-sine'),
+            lfoSaw = document.querySelector('.lfo-saw'),
+            lfoSquare = document.querySelector('.lfo-square'),
+            lfoTriangle = document.querySelector('.lfo-triangle'),
             egHigh = document.querySelector('.egs-high'),
             egLow = document.querySelector('.egs-low');
 
@@ -110,8 +112,12 @@ console.log('Hello World from Webpacker')
     egMode = this.value;
 }, true);
 
-                   addEventListenerBySelector('[name="vco-type"]', 'change', function () {
+            addEventListenerBySelector('[name="vco-type"]', 'change', function () {
     vco.type = this.value;
+}, true);
+
+            addEventListenerBySelector('[name="lfo-type"]', 'change', function () {
+    lfo.type = this.value;
 }, true);
 // Cutoff.oninput = function(){
           //   changeCutoff(Cutoff.value);

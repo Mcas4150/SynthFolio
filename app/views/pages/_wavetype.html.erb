@@ -26,12 +26,36 @@
         </label>
     </div>
 </fieldset>
+<fieldset>
+    <legend>LFO TYPE</legend>
+
+    <div class="center">
+        <label class="selected">
+          Sin
+          <input class="lfo-sine" name="lfo-type" type="radio" value="sine" checked />
+        </label>
+        <label>
+          Sqr
+          <input class="lfo-square" name="lfo-type" type="radio" value="square" />
+        </label>
+        <label>
+          Saw
+          <input class="lfo-saw" name="lfo-type" type="radio" value="sawtooth" />
+        </label>
+        <label>
+          Tri
+          <input class="lfo-triangle" name="lfo-type" type="radio" value="triangle" />
+        </label>
+    </div>
+</fieldset>
 
 
-<legend>EG</legend>
-<label>Hi
-   <input class='eg-high' type='radio' name='egMode' value='5' />
-</label>
-<label class="selected">Lo
-  <input class='eg-low' type='radio' name='egMode' value='1' checked />
-</label>
+<div class="half">
+  <legend>EG</legend>
+  <label>Hi
+     <input class='eg-high' type='radio' name='egMode' value='5' />
+  </label>
+  <label class="selected">Lo
+    <input class='eg-low' type='radio' name='egMode' value='1' checked />
+  </label>
+</div>
