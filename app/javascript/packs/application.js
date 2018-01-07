@@ -104,8 +104,8 @@ console.log('Hello World from Webpacker')
           moogFilter.connect(vca);
           lfo.connect(lfoGain);
           lfoGain.connect(vca.gain);
-          vca.connect(compressor);
-          compressor.connect(master);
+          vca.connect(master);
+          // compressor.connect(master);
           master.connect(analyser);
           analyser.connect(context.destination);
 
@@ -126,18 +126,7 @@ console.log('Hello World from Webpacker')
               changeRelease(Release.value);
           }
 
-          // vcoType.onchange = function(){
-          //   changeVcoType(vcoType.value);
-          // }
 
-    //       waveType.onchange = function () {
-    //           changeWaveType(waveType.value);
-    //       }
-
-
-            // addEventListenerBySelector('[name="vco-type"]', 'change', function () {
-            // egMode = this.value;
-            //   }, true);
 
             addEventListenerBySelector('[name="egMode"]', 'change', function () {
               egMode = this.value;
@@ -154,26 +143,6 @@ console.log('Hello World from Webpacker')
                 lfo.type = this.value;
             }, true);
 
-
-// Cutoff.oninput = function(){
-          //   changeCutoff(Cutoff.value);
-          // }
-
-          // Resonance.oninput = function(){
-          //   changeResonance(Resonance.value);
-          // }
-
-          // LFOinput.oninput = function () {
-          //   lfo.frequency.value = this.value;
-          //   lfo.frequency.cancelScheduledValues(0);
-          //   lfo.frequency.setValueAtTime(this.value, context.currentTime);
-          // }
-
-          // LFOintensity.oninput = function () {
-          //     lfoGain.gain.value = this.value;
-          //     lfoGain.gain.cancelScheduledValues(0);
-          //     lfoGain.gain.setValueAtTime(this.value, context.currentTime);
-          // }
 
           function addEventListenerBySelector(selector, event, fn) {
               var list = document.querySelectorAll(selector);
@@ -201,13 +170,6 @@ console.log('Hello World from Webpacker')
           }
 
 
-          // function changeCutoff(val){
-          //   lowPassFilter.frequency.value = val;
-          // }
-
-          // function changeResonance(val){
-          //   lowPassFilter.Q.value = val;
-          // }
 
         var masterGain = document.querySelector('.master-gain');
         masterGain.oninput = function (){
@@ -342,15 +304,6 @@ console.log('Hello World from Webpacker')
               lfoGain.gain.setValueAtTime(LFOintensity.value, context.currentTime);
           }
         });
-
-
-        // $(function) {
-        //    $$('input[type="radio"]').set({
-        // events: {
-        //     change: function (el) {
-        //         $$('label').removeClass('selected');
-        //         this.getParent('label').addClass('selected');
-        //   };
 
 
 
@@ -652,12 +605,6 @@ document.addEventListener("touchstart", play);
     })
 
 
-// $('input[name="vco-type"]').on('change', () => {
-//   // $('label').removeClass('selected')
-//   $("label").removeClass('selected')
-//   $(this).parent("label").addClass('selected')
-// })
-
 
 
   $('label').click(function () {
@@ -675,32 +622,6 @@ document.addEventListener("touchstart", play);
                                 document.getElementById('sendButton').setAttribute('value', 'thanks!');
                             }
                         }
- // Cutoff.oninput = function(){
-          //   changeCutoff(Cutoff.value);
-          // }
-  // $(function(){
-  //   var falseslider = $('#falseslider'),
-  //       min = falseslider.attr('min'),
-  //       max = falseslider.attr('max');
-
-  //       falseslider.hide();
-
-  //       $('#knobby').knobknob({
-  //         snap : 10,
-  //         value: 250,
-  //         turn : function(ratio){
-  //           // Changing the value of the hidden slider
-  //           falseslider.val(Math.round(ratio*(max-min) + min));
-  //           }
-
-  //       });
-
-  // });
-
-
-// var contactWidth = document.getElementById('contact').offsetWidth;
-// var oscilloscope = new Oscilloscope(context, analyser, contactWidth, 150);
-// vca.connect(oscilloscope.analyser);
 
 
 

@@ -305,6 +305,10 @@ border-right: 3px solid white;
 }
 
 
+canvas{
+  width: 100%;
+}
+
 .between{
   height: 37px;
   justify-content: space-between;
@@ -354,8 +358,17 @@ border-right: 3px solid white;
 }
 
 .links{
+  padding-top: 5px;
 display: flex;
 justify-content: space-between;
+}
+
+.blurb{
+  font-size: .85rem;
+  text-align: center;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 @media screen and (max-width:1300px){
@@ -404,7 +417,7 @@ h6{
   }
 
   .model{
-    font-size:1.2em;
+    font-size:1.05em;
     font-weight: bold;
   }
 
