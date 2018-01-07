@@ -12,12 +12,12 @@ console.log('Hello World from Webpacker')
 
   $(document).ready(function() {
       var context = new (window.AudioContext || window.webkitAudioContext)();
-      // var tuna = new Tuna(context);
+      var tuna = new Tuna(context);
 
       var analyser = context.createAnalyser(),
           master = context.createGain()
            a = d = r = 0.1, s = 1, egMode = 1, lfoMode = 1;
-          master.gain.value = 1;
+          master.gain.value = .75;
 
         // VCO
 
@@ -66,16 +66,46 @@ console.log('Hello World from Webpacker')
             lfoLow = document.querySelector('.lfo-low');
 
 
+        var phaser = new tuna.Phaser({
+              rate: 1.2,                     //0.01 to 8 is a decent range, but higher values are possible
+              depth: 0.3,                    //0 to 1
+              feedback: 0.2,                 //0 to 1+
+              stereoPhase: 30,               //0 to 180
+              baseModulationFrequency: 700,  //500 to 1500
+              bypass: 0
+          });
 
+        var moogFilter = new tuna.MoogFilter({
+              cutoff: 1,    //0 to 1
+              resonance: 0,   //0 to 4
+              bufferSize: 4096  //256 to 16384
+          });
 
+        var compressor = new tuna.Compressor({
+          threshold: -3,    //-100 to 0
+          makeupGain: 0,     //0 and up (in decibels)
+          attack: 1,         //0 to 1000
+          release: 200,        //0 to 3000
+          ratio: 4,          //1 to 20
+          knee: 5,           //0 to 40
+          automakeup: true,  //true/false
+          bypass: 0
+      });
+
+      // var compressor = context.createDynamicsCompressor();
+      //       compressor.threshold.value = -40;
+      //       compressor.knee.value = 40;
+      //       compressor.ratio.value = 20;
+      //       compressor.attack.value = 0;
+      //       compressor.release.value = 0.25;
 
         // Connect
-          vco.connect(lowPassFilter);
-          lowPassFilter.connect(vca);
+          vco.connect(moogFilter);
+          moogFilter.connect(vca);
           lfo.connect(lfoGain);
           lfoGain.connect(vca.gain);
-          vca.connect(master);
-
+          vca.connect(compressor);
+          compressor.connect(master);
           master.connect(analyser);
           analyser.connect(context.destination);
 
@@ -236,8 +266,8 @@ console.log('Hello World from Webpacker')
       $('.cutoff').knob(
         {
           'min':0,
-          'max':1000,
-          'step':5,
+          'max':1,
+          'step':0.005,
           'width': 42,
           'height': 42,
           'angleOffset': 180,
@@ -248,7 +278,7 @@ console.log('Hello World from Webpacker')
           'change': function (){
                 changeCutoff(Cutoff.value);
               function changeCutoff(val){
-                 lowPassFilter.frequency.value = val;
+                 moogFilter.cutoff = val;
               }
               }
         });
@@ -256,8 +286,8 @@ console.log('Hello World from Webpacker')
       $('.resonance').knob(
         {
           'min':0,
-          'max':10,
-          'step':0.05,
+          'max':4,
+          'step':0.1,
           'width': 42,
           'height': 42,
           'angleOffset': 180,
@@ -268,7 +298,7 @@ console.log('Hello World from Webpacker')
           'change': function (){
                 changeResonance(Resonance.value);
               function changeResonance(val){
-                 lowPassFilter.Q.value = val;
+                 moogFilter.resonance = val;
               }
               }
         });
@@ -429,7 +459,7 @@ draw();
   });
   document.addEventListener("keyup", function(){
 
-    envGenOff(vca.gain, lfoGain.gain, r);
+    envGenOff(vca.gain, r);
     $(".key").removeClass("pressed");
     $(".key").removeClass("blackpressed");
   });
