@@ -11,13 +11,14 @@
 console.log('Hello World from Webpacker')
 
   $(document).ready(function() {
-      var context = new (window.AudioContext || window.webkitAudioContext)();
-      var tuna = new Tuna(context);
+    var context = new (window.AudioContext || window.webkitAudioContext)();
+    var tuna = new Tuna(context);
 
-      var analyser = context.createAnalyser(),
-          master = context.createGain()
-           a = d = r = 0.1, s = 1, egMode = 1, lfoMode = 1;
-          master.gain.value = .75;
+    var analyser = context.createAnalyser(),
+        master = context.createGain()
+        a = d = r = 0.1, s = 1, egMode = 1, lfoMode = 1, pitchMode = 1;
+        master.gain.value = .75;
+
 
         // VCO
 
@@ -37,11 +38,11 @@ console.log('Hello World from Webpacker')
 
 
         //  Low Frequency Oscillator (LFO)
-          var lfo = context.createOscillator();
-              lfo.type = "sine";
-              lfo.start(0);
-              lfoGain = context.createGain();
-              lfoGain.gain.value = 0;
+        var lfo = context.createOscillator();
+            lfo.type = "sine";
+            lfo.start(0);
+            lfoGain = context.createGain();
+            lfoGain.gain.value = 0;
 
 
         var Attack = document.querySelector('.attack'),
@@ -63,8 +64,9 @@ console.log('Hello World from Webpacker')
             egHigh = document.querySelector('.egs-high'),
             egLow = document.querySelector('.egs-low');
             lfoHigh = document.querySelector('.lfo-high'),
-            lfoLow = document.querySelector('.lfo-low');
-
+            lfoLow = document.querySelector('.lfo-low'),
+            pitchShift = document.querySelector('.pitch-shift'),
+            masterGain = document.querySelector('.master-gain');
 
         var phaser = new tuna.Phaser({
               rate: 1.2,                     //0.01 to 8 is a decent range, but higher values are possible
@@ -123,15 +125,21 @@ console.log('Hello World from Webpacker')
           }
 
           Release.oninput = function () {
-              changeRelease(Release.value);
+            changeRelease(Release.value);
           }
 
+          masterGain.oninput = function (){
+            changeMaster(masterGain.value);
+          }
 
+          pitchShift.oninput = function (){
+            changePitch(pitchShift.value);
+          }
 
             addEventListenerBySelector('[name="egMode"]', 'change', function () {
               egMode = this.value;
             }, true);
-                      addEventListenerBySelector('[name="lfoMode"]', 'change', function () {
+            addEventListenerBySelector('[name="lfoMode"]', 'change', function () {
               lfoMode = this.value;
             }, true);
 
@@ -169,17 +177,13 @@ console.log('Hello World from Webpacker')
               r = +val;
           }
 
-
-
-        var masterGain = document.querySelector('.master-gain');
-        masterGain.oninput = function (){
-          changeMaster(masterGain.value);
-        }
-
         function changeMaster(vol){
           master.gain.value = vol/100;
         }
 
+        function changePitch(val){
+          vco.frequency.value *= val;
+        }
 
         function envGenOn(vcaGain, a, d, s) {
             var now = context.currentTime;
@@ -197,12 +201,6 @@ console.log('Hello World from Webpacker')
             vcaGain.cancelScheduledValues(0);
             vcaGain.setValueAtTime(vcaGain.value, now);
             vcaGain.linearRampToValueAtTime(0, now + r);
-            // lfoGain.cancelScheduledValues(0);
-            // lfoGain.setValueAtTime(vcaGain.value, now);
-            // lfoGain.linearRampToValueAtTime(0, now + r);
-            // vcaGain.cancelScheduledValues(0);
-            // vcaGain.setValueAtTime(vcaGain.value, now);
-            // vcaGain.linearRampToValueAtTime(0, now + r);
         }
 
       $('.master-gain').knob(
@@ -222,8 +220,30 @@ console.log('Hello World from Webpacker')
               function changeMaster(vol){
                 master.gain.value = vol/100;
               }
-              }
+            }
         });
+
+        $('.pitch-shift').knob(
+        {
+          'min':0.01,
+          'max':2,
+          'step':0.1,
+          'width': 75,
+          'height': 75,
+          'angleOffset': 180,
+          'angleArc': 365,
+          'displayInput': false,
+          'fgColor': "ghostwhite",
+          'bgColor': "#a0a0a0",
+          'change': function (){
+            changePitch(pitchShift.value);
+           function changePitch(val){
+          vco.frequency.value *= val;
+        }
+       }
+      });
+
+
 
       $('.cutoff').knob(
         {
@@ -306,57 +326,57 @@ console.log('Hello World from Webpacker')
         });
 
 
+// Oscilloscope
 
-var canvas = document.querySelector('.visualizer');
-var canvasCtx = canvas.getContext("2d");
-
-
-  WIDTH = canvas.width;
-  HEIGHT = canvas.height;
-
-analyser.fftSize = 2048;
-var bufferLength = analyser.frequencyBinCount;
-var dataArray = new Uint8Array(bufferLength);
-
-canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
+      var canvas = document.querySelector('.visualizer');
+      var canvasCtx = canvas.getContext("2d");
 
 
-function draw() {
-  drawVisual = requestAnimationFrame(draw);
-  analyser.getByteTimeDomainData(dataArray);
-  canvasCtx.fillStyle = 'rgb(200, 200, 200)';
-      canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
+        WIDTH = canvas.width;
+        HEIGHT = canvas.height;
 
-canvasCtx.lineWidth = 2;
-      canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
+      analyser.fftSize = 2048;
+      var bufferLength = analyser.frequencyBinCount;
+      var dataArray = new Uint8Array(bufferLength);
 
-      canvasCtx.beginPath();
-
-      var sliceWidth = WIDTH * 1.0 / bufferLength;
-      var x = 0;
-
-      for(var i = 0; i < bufferLength; i++) {
-
-        var v = dataArray[i] / 128.0;
-        var y = v * HEIGHT/2;
-
-        if(i === 0) {
-          canvasCtx.moveTo(x, y);
-        } else {
-          canvasCtx.lineTo(x, y);
-        }
-
-        x += sliceWidth;
-      }
-
-      canvasCtx.lineTo(canvas.width, canvas.height/2);
-      canvasCtx.stroke();
+      canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
 
 
+      function draw() {
+        drawVisual = requestAnimationFrame(draw);
+        analyser.getByteTimeDomainData(dataArray);
+        canvasCtx.fillStyle = 'rgb(200, 200, 200)';
+            canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
 
-};
+      canvasCtx.lineWidth = 2;
+            canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
 
+            canvasCtx.beginPath();
+
+            var sliceWidth = WIDTH * 1.0 / bufferLength;
+            var x = 0;
+
+            for(var i = 0; i < bufferLength; i++) {
+
+              var v = dataArray[i] / 128.0;
+              var y = v * HEIGHT/2;
+
+              if(i === 0) {
+                canvasCtx.moveTo(x, y);
+              } else {
+                canvasCtx.lineTo(x, y);
+              }
+
+              x += sliceWidth;
+            }
+
+            canvasCtx.lineTo(canvas.width, canvas.height/2);
+            canvasCtx.stroke();
+      };
 draw();
+
+
+
 
 
     $('.key').mousedown(function(){
@@ -417,13 +437,13 @@ draw();
     $(".key").removeClass("blackpressed");
   });
 
- document.addEventListener("touchstart", function(){
-    vca.gain.value = .65;
-  });
-  document.addEventListener("touchend", function(){
-    vca.gain.value = 0;
+ // document.addEventListener("touchstart", function(){
+ //    vca.gain.value = .65;
+ //  });
+ //  document.addEventListener("touchend", function(){
+ //    vca.gain.value = 0;
 
-  });
+ //  });
 
   // var keyress = function(event, frequency, key){
   //   event.w.keypress(function(){
@@ -572,7 +592,18 @@ draw();
     };
 
 document.addEventListener("keydown", play);
-document.addEventListener("touchstart", play);
+// document.addEventListener("touchstart", function(){
+//   var buffer = context.createBuffer(1, 1, 22050);
+//   var source = context.createBufferSource();
+//   source.buffer = buffer;
+
+//   // connect to output (your speakers)
+//   source.connect(context.destination);
+
+//   // play the file
+//   source.play;
+
+// }, false);
 
 
 
@@ -622,28 +653,6 @@ document.addEventListener("touchstart", play);
                                 document.getElementById('sendButton').setAttribute('value', 'thanks!');
                             }
                         }
-
-  var isUnlocked = false;
-function unlock() {
-
-  if(isIOS || this.unlocked)
-    return;
-
-  // create empty buffer and play it
-  var buffer = myContext.createBuffer(1, 1, 22050);
-  var source = myContext.createBufferSource();
-  source.buffer = buffer;
-  source.connect(myContext.destination);
-  source.noteOn(0);
-
-  // by checking the play state after some time, we know if we're really unlocked
-  setTimeout(function() {
-    if((source.playbackState === source.PLAYING_STATE || source.playbackState === source.FINISHED_STATE)) {
-      isUnlocked = true;
-    }
-  }, 0);
-
-}
 
 
 });
