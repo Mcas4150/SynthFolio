@@ -314,6 +314,14 @@ console.log('Hello World from Webpacker')
         });
 
 
+        // $(function) {
+        //    $$('input[type="radio"]').set({
+        // events: {
+        //     change: function (el) {
+        //         $$('label').removeClass('selected');
+        //         this.getParent('label').addClass('selected');
+        //   };
+
 
 
 var canvas = document.querySelector('.visualizer');
@@ -585,10 +593,58 @@ document.addEventListener("touchstart", play);
 
 
 
+ $('.bellabutton').on('click', () => {
+      $('.bellabutton').addClass('button-active'), $('.bella').show(), $('.rama').hide(), $('.commons').hide()
+    })
+    $('.commonsbutton').on('click', () => {
+        $('.commonsbutton').addClass('button-active'), $('.commons').show(), $('.rama').hide(), $('.bella').hide()
+    })
+     $('.ramabutton').on('click', () => {
+       $('.ramabutton').addClass('button-active'), $('.rama').show(), $('.commons').hide(), $('.bella').hide()
+    })
+      $('.bellabutton').on('mouseenter', () => {
+      $('.bellabutton').addClass('button-active'), $('.bella').show(), $('.rama').hide(), $('.commons').hide()
+    })
+    $('.commonsbutton').on('mouseenter', () => {
+        $('.commonsbutton').addClass('button-active'), $('.commons').show(), $('.rama').hide(), $('.bella').hide()
+    })
+     $('.ramabutton').on('mouseenter', () => {
+       $('.ramabutton').addClass('button-active'), $('.rama').show(), $('.commons').hide(), $('.bella').hide()
+    })
+      $('.ramabutton').on('mouseleave', () => {
+         $('.ramabutton').removeClass('button-active')
+    })
+        $('.commonsbutton').on('mouseleave', () => {
+         $('.commonsbutton').removeClass('button-active')
+    })
+          $('.bellabutton').on('mouseleave', () => {
+         $('.bellabutton').removeClass('button-active')
+    })
+
+
+// $('input[name="vco-type"]').on('change', () => {
+//   // $('label').removeClass('selected')
+//   $("label").removeClass('selected')
+//   $(this).parent("label").addClass('selected')
+// })
 
 
 
+  $('label').click(function () {
+    $(this).siblings('label').removeClass('selected')
+    $(this).addClass('selected')
+  })
 
+
+            function greet() {
+                            var nameVal = document.getElementById('name').checkValidity();
+                            var emailVal = document.getElementById('email').checkValidity();
+                            var textareaVal = document.getElementById('message').checkValidity();
+                            if (nameVal && emailVal && textareaVal) {
+                                document.getElementById('sendButton').style.width = "97px";
+                                document.getElementById('sendButton').setAttribute('value', 'thanks!');
+                            }
+                        }
  // Cutoff.oninput = function(){
           //   changeCutoff(Cutoff.value);
           // }

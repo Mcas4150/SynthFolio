@@ -32,6 +32,7 @@ label:last-child {
     border-top-right-radius: .2em;
     border-bottom-right-radius: .2em;
 }
+
 label.selected {
         background-color: #c1c1c1;
     color: black;
@@ -42,15 +43,15 @@ label.selected {
     box-shadow: 1px 1px 1px rgba(0,0,0,.2) inset;
 }
 
-input:checked {
-        background-color: #c1c1c1;
-    color: black;
-    border-color: #666;
-    background-image: -moz-linear-gradient(rgba(0,0,0,.2), rgba(255,255,255,.2));
-    background-image: -webkit-linear-gradient(rgba(0,0,0,.2), rgba(255,255,255,.2));
-    background-image: linear-gradient(rgba(0,0,0,.2), rgba(255,255,255,.2));
-    box-shadow: 1px 1px 1px rgba(0,0,0,.2) inset;
-}
+// input[type="radio"]:checked ~ label {
+//         background-color: #c1c1c1;
+//     color: black;
+//     border-color: #666;
+//     background-image: -moz-linear-gradient(rgba(0,0,0,.2), rgba(255,255,255,.2));
+//     background-image: -webkit-linear-gradient(rgba(0,0,0,.2), rgba(255,255,255,.2));
+//     background-image: linear-gradient(rgba(0,0,0,.2), rgba(255,255,255,.2));
+//     box-shadow: 1px 1px 1px rgba(0,0,0,.2) inset;
+// }
 
 
 input[type="radio"] {
