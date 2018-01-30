@@ -63,14 +63,13 @@ input[type="radio"] {
 
 
 .knob{
-  background-image: url('https://i.imgur.com/EjFQA0o.png');
   background-size: 100%;
   background-repeat: no-repeat;
   height: 100px;
 }
 
 .switch{
-     background-image: url('https://i.imgur.com/dCndRTi.png');
+    background-image: url(image_path('switch.png'));
     background-repeat: no-repeat;
         background-size: 95%;
     background-position: center;
@@ -80,7 +79,7 @@ input[type="radio"] {
 }
 
 .leather{
-  background-image: url('https://i.imgur.com/NujeAyr.png');
+ background-image: url(image_path('leather.png'));
    background-size: 100%;
     background-repeat: repeat;
   width:100%;
@@ -89,7 +88,7 @@ input[type="radio"] {
 }
 
 .knob2{
-  background-image: url('https://i.imgur.com/8eoE6nm.gif');
+  background-image: url(image_path('knob2.gif'));
   background-size: 100%;
   background-repeat: no-repeat;
   border-radius:50%;
@@ -99,7 +98,7 @@ input[type="radio"] {
 }
 
 .power{
-  background-image: url('https://i.imgur.com/bov7ydy.png');
+  background-image: url(image_path('power.png'));
   background-size: 30%;
   background-position: center;
   background-repeat: no-repeat;
@@ -107,7 +106,7 @@ input[type="radio"] {
 }
 
 .toggle{
-    background-image: url('https://i.imgur.com/eOnCQvr.png');
+   background-image: url(image_path('toggle.png'));
   background-size: 50%;
   background-position: center;
   background-repeat: no-repeat;
@@ -115,7 +114,7 @@ input[type="radio"] {
 }
 
 .screw{
- background-image: url('https://i.imgur.com/OUhnW7W.png');
+   background-image: url(image_path('screw.png'));
   background-size: 100%;
   // background-position: center;
   background-repeat: no-repeat;
@@ -126,13 +125,7 @@ input[type="radio"] {
     margin-left:10px;
 }
 
-.fader{
-background-image: url('https://i.imgur.com/xNZRiiX.png');
-}
 
-.fader2{
- background-image: url('https://i.imgur.com/4BO0JVC.png');
-}
 
 .fader, .fader2{
   background-position: center;
@@ -142,7 +135,7 @@ background-image: url('https://i.imgur.com/xNZRiiX.png');
 
 
 .littleknob{
-   background-image: url('https://i.imgur.com/93YHhgo.png');
+
        background-size: 80%;
     background-repeat: no-repeat;
    background-position: center;
@@ -152,7 +145,7 @@ background-image: url('https://i.imgur.com/xNZRiiX.png');
 }
 
 .littleknob2{
-   background-image: url('https://i.imgur.com/trZ2Btg.png');
+
        background-size: 80%;
     background-repeat: no-repeat;
    background-position: center;
@@ -162,7 +155,7 @@ background-image: url('https://i.imgur.com/xNZRiiX.png');
 }
 
 .littleknob3{
-   background-image: url('https://i.imgur.com/2TvQ3n6.png');
+
        background-size: 80%;
     background-repeat: no-repeat;
    background-position: center;
@@ -172,7 +165,7 @@ background-image: url('https://i.imgur.com/xNZRiiX.png');
 }
 
 .knob3{
-   background-image: url('https://i.imgur.com/UtAZrRl.png');
+
      background-size: 55%;
     background-position: center;
     background-repeat: no-repeat;
@@ -180,7 +173,7 @@ background-image: url('https://i.imgur.com/xNZRiiX.png');
 }
 
 .knob4{
-   background-image: url('https://i.imgur.com/RjoMJSs.png');
+
      background-size: 55%;
     background-position: center;
     background-repeat: no-repeat;
@@ -189,7 +182,7 @@ background-image: url('https://i.imgur.com/xNZRiiX.png');
 
 
 .robot{
-  background-image: url('https://i.imgur.com/PsPRGCL.png');
+  background-image: url(image_path('robot.png'));
     background-size: 100%;
   // background-position: center;
   background-repeat: no-repeat;
